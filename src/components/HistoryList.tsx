@@ -7,7 +7,7 @@ type TProps = {
     history: THistory []
 }
 
-export const HistoryList:FC<TProps> = ({history}) => {
+export const HistoryList: FC<TProps> = ({history}) => {
     const historyList = history.map(historyItem => (<HistoryListItem key={historyItem.id}
                                                                      historyItem={historyItem}/>))
     return (
@@ -18,5 +18,5 @@ export const HistoryList:FC<TProps> = ({history}) => {
 };
 
 const Wrapper = styled.ul`
-
+    background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 `

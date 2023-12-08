@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 import sprite from "../assets/icons/icons-sprite.svg"
+import {Icon} from "./Icon";
 
 type TProps = {
     title: string
@@ -11,19 +12,13 @@ type TProps = {
 export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
     return (
         <Wrapper>
-            {iconId && (
-                <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use xlinkHref={`${sprite}#${iconId}`}/>
-                </svg>
-            )}
+            {iconId && (<Icon iconId={iconId}/>)}
             <h3>{title}</h3>
             <p>{subtitle}</p>
             {!iconId && (
                 <button>
                     ORDER NOW
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <use xlinkHref={`${sprite}#rightArrow`}/>
-                    </svg>
+                    <Icon iconId={"rightArrow"} height={"20"} width={"20"}/>
                 </button>
             )}
         </Wrapper>

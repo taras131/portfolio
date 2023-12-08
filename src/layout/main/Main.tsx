@@ -6,6 +6,8 @@ import {PricePlansSection} from "../../components/PricePlansSection";
 import {RecommendationsSection} from "../../components/RecommendationsSection";
 import {EducationSection} from "../../components/EducationSection";
 import {WorkSection} from "../../components/WorkSection";
+import {PortfolioSection} from "../../components/PortfolioSection";
+import {BlogSection} from "../../components/BlogSection";
 
 export const Main = () => {
     return (
@@ -16,6 +18,8 @@ export const Main = () => {
             <RecommendationsSection/>
             <EducationSection/>
             <WorkSection/>
+            <PortfolioSection/>
+            <BlogSection/>
         </Wrapper>
     );
 };

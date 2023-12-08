@@ -4,7 +4,18 @@ import {TRecommendation} from "../models/TRecommendations";
 import avatar_1 from "../assets/images/recomendation_photo_1.jpg";
 import avatar_2 from "../assets/images/recomendation_photo_2.jpg";
 import avatar_3 from "../assets/images/recomendation_photo_3.jpg";
+import portfolio_1 from "../assets/images/portfolio_1.png";
+import portfolio_2 from "../assets/images/portfolio_2.png";
+import portfolio_3 from "../assets/images/portfolio_3.png";
+import portfolio_4 from "../assets/images/portfolio_4.png";
+import portfolio_5 from "../assets/images/portfolio_5.png";
+import portfolio_6 from "../assets/images/portfolio_6.png";
+import portfolio_7 from "../assets/images/portfolio_7.png";
+import portfolio_8 from "../assets/images/portfolio_8.png";
+import portfolio_9 from "../assets/images/portfolio_9.png";
 import {THistory} from "../models/THistory";
+import {TPortfolio, TPortfolioCategory} from "../models/TPortfolio";
+import {TBlog} from "../models/TBlog";
 
 export const servicesTitle = "My Services";
 export const servicesDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia " +
@@ -181,4 +192,82 @@ export const workHistory: THistory [] = [
         dateStart: "Jan 1016",
         dateFinish: "Dec 2021"
     },
+]
+
+export const portfolioTitle = "Portfolio";
+export const portfolioDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
+    "Velit officia consequat duis enim velit mollit. lorem ipsum";
+export const portfolioWorks: TPortfolio [] = [
+    {
+        id: 0,
+        imgPath: portfolio_1
+    },
+    {
+        id: 1,
+        imgPath: portfolio_2
+    },
+    {
+        id: 2,
+        imgPath: portfolio_3
+    },
+    {
+        id: 3,
+        imgPath: portfolio_4
+    },
+    {
+        id: 4,
+        imgPath: portfolio_5
+    },
+    {
+        id: 5,
+        imgPath: portfolio_6
+    },
+    {
+        id: 6,
+        imgPath: portfolio_7
+    },
+    {
+        id: 7,
+        imgPath: portfolio_8
+    },
+    {
+        id: 8,
+        imgPath: portfolio_9
+    },
+]
+export const portfolioCategories: TPortfolioCategory [] = [
+    {id: 0, title: "All categories"},
+    {id: 1, title: "UI Design"},
+    {id: 2, title: "Web Templates"},
+    {id: 3, title: "Logo"},
+    {id: 4, title: "Branding"},
+]
+
+export const blogTitle = "Blog";
+export const blogDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
+    "Velit officia consequat duis enim velit mollit. lorem ipsum";
+export const blogs: TBlog[] = [
+    {
+        id: 0,
+        title: "How to make web tempates",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna ",
+        imgPath: portfolio_9
+    },
+    {
+        id: 1,
+        title: "make Business card",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna ",
+        imgPath: portfolio_2
+    },
+    {
+        id: 2,
+        title: "How to make Flyer Design",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna ",
+        imgPath: portfolio_4
+    },
+
+
 ]
