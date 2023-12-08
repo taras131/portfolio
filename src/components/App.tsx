@@ -1,26 +1,31 @@
 import styled from 'styled-components';
+import {Main} from "../layout/main/Main";
+import {RightSideBar} from "../layout/sidebars/RightSideBar";
+import {LeftSideBar} from "../layout/sidebars/LeftSideBar";
 
-
-function App() {
+export function App() {
     return (
-        <Wrapper className="App">
-            <Title>Hi i`m Taras</Title>
+        <Wrapper>
+            <ContentWrapper>
+                <LeftSideBar/>
+                <Main/>
+                <RightSideBar/>
+            </ContentWrapper>
         </Wrapper>
     );
 }
 
-export default App;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: ${({theme})=> theme.colors.backgroundColor};
-  min-height: 100vh;
+  align-items: start;
+  background-color: ${({theme}) => theme.colors.backgroundColor};
+  width: 100%;
+  padding-bottom: 20px;
 `
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #e91e63;
-`;
+const ContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+`
