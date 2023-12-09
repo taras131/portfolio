@@ -21,7 +21,6 @@ const Wrapper = styled.div`
   align-items: start;
   background-color: ${({theme}) => theme.colors.backgroundColor};
   width: 100%;
-  padding-bottom: 20px;
 `
 const ContentWrapper = styled.div`
   width: 100%;

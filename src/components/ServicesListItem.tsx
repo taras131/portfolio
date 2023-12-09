@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 import sprite from "../assets/icons/icons-sprite.svg"
 import {Icon} from "./Icon";
+import {Button} from "./Button";
 
 type TProps = {
     title: string
@@ -16,10 +17,10 @@ export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
             <h3>{title}</h3>
             <p>{subtitle}</p>
             {!iconId && (
-                <button>
+                <Button variant={"text"}>
                     ORDER NOW
                     <Icon iconId={"rightArrow"} height={"20"} width={"20"}/>
-                </button>
+                </Button>
             )}
         </Wrapper>
     );
@@ -40,17 +41,7 @@ const Wrapper = styled.li`
 
   & p {
     margin-top: 15px;
-  }
-
-  & button {
-    color: ${({theme}) => theme.colors.primary};
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-  }
-
-  & button:hover svg {
-    margin-left: 10px;
+    margin-bottom: 20px;
   }
 `
 

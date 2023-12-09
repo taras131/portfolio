@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import myPhoto from "../../assets/images/my_photo.png";
 import {FlexContainer} from "../../components/FlexContainer";
+import {Button} from "../../components/Button";
 
 export const AboutMe = () => {
     return (
@@ -12,7 +13,7 @@ export const AboutMe = () => {
                     <h1><span>Front-end </span>Developer</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis.
                         Natoque rutrum semper sed suspendisse nunc lectus.</p>
-                    <button>HIRE ME</button>
+                    <Button variant={"contained"}>HIRE ME</Button>
                 </div>
                 <Photo src={myPhoto} alt="my_photo"/>
             </FlexContainer>

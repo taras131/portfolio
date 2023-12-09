@@ -18,7 +18,7 @@ const Wrapper = styled.li`
   & img {
     width: 310px;
     height: 300px;
-    flex-shrink: 0;
+    object-fit: cover;
   }
 `
 

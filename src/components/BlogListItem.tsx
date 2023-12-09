@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
 import {TBlog} from "../models/TBlog";
+import {Button} from "./Button";
+import {Icon} from "./Icon";
 
 type TProps = {
     blog: TBlog
@@ -13,6 +15,10 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
             <div>
                 <h3>{blog.title}</h3>
                 <p>{blog.text}</p>
+                <Button variant={"text"}>
+                    Learn more
+                    <Icon iconId={"rightArrow"} height={"20"} width={"20"}/>
+                </Button>
             </div>
         </Wrapper>
     );
@@ -25,6 +31,7 @@ const Wrapper = styled.li`
 
   & img {
     width: 100%;
+    object-fit: cover;
     height: 300px;
   }
 
@@ -41,6 +48,7 @@ const Wrapper = styled.li`
 
     & p {
       margin-top: 8px;
+      margin-bottom: 9px;
       font-size: 15px;
       font-style: normal;
       font-weight: 400;

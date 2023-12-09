@@ -16,6 +16,19 @@ import portfolio_9 from "../assets/images/portfolio_9.png";
 import {THistory} from "../models/THistory";
 import {TPortfolio, TPortfolioCategory} from "../models/TPortfolio";
 import {TBlog} from "../models/TBlog";
+import {TContact} from "../models/TContacts";
+
+export const spriteIds = {
+    check: "check",
+    contact: "contact",
+    location: "location",
+    mail: "mail",
+    petroleum: "petroleum",
+    station: "station",
+    garage: "garage",
+    filling: "filling",
+    copyright: "copyright",
+}
 
 export const servicesTitle = "My Services";
 export const servicesDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia " +
@@ -268,6 +281,42 @@ export const blogs: TBlog[] = [
             " Vitae nulla diam in ac dictum a urna ",
         imgPath: portfolio_4
     },
-
-
 ]
+//contacts
+export const myContacts: TContact [] = [
+    {
+        id: 0,
+        iconId: spriteIds.location,
+        items: [
+            {id: 0, name: "Country:", value: "Bangladesh"},
+            {id: 1, name: "City:", value: "Dhaka"},
+            {id: 2, name: "Country:", value: "35 vhatara, Badda"},
+        ]
+    },
+    {
+        id: 1,
+        iconId: spriteIds.mail,
+        items: [
+            {id: 0, name: "Email:", value: "youremail@gmail.com"},
+            {id: 1, name: "Skype:", value: "@yourusername"},
+            {id: 2, name: "Telegram:", value: "@yourusername"},
+        ]
+    },
+    {
+        id: 2,
+        iconId: spriteIds.contact,
+        items: [
+            {id: 0, name: "Support services:", value: "15369"},
+            {id: 1, name: "Office:", value: "+58 (021)356 587 235"},
+            {id: 2, name: "Personal:", value: "+58 (021)356 587 235"},
+        ]
+    },
+]
+
+export const clients = [
+    {id: 0, iconId: spriteIds.petroleum},
+    {id: 1, iconId: spriteIds.filling},
+    {id: 2, iconId: spriteIds.garage},
+    {id: 3, iconId: spriteIds.station},
+]
+

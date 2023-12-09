@@ -8,6 +8,9 @@ import {EducationSection} from "../../components/EducationSection";
 import {WorkSection} from "../../components/WorkSection";
 import {PortfolioSection} from "../../components/PortfolioSection";
 import {BlogSection} from "../../components/BlogSection";
+import {ContactsSection} from "../../components/ContactsSection";
+import {ClientsSection} from "../../components/ClientsSection";
+import {Footer} from "../Footer";
 
 export const Main = () => {
     return (
@@ -20,6 +23,9 @@ export const Main = () => {
             <WorkSection/>
             <PortfolioSection/>
             <BlogSection/>
+            <ContactsSection/>
+            <ClientsSection/>
+            <Footer/>
         </Wrapper>
     );
 };
