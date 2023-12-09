@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import {Main} from "../layout/main/Main";
 import {RightSideBar} from "../layout/sidebars/RightSideBar";
-import {LeftSideBar} from "../layout/sidebars/LeftSideBar";
+import {Profile} from "../layout/sidebars/Profile";
 
 export function App() {
     return (
         <Wrapper>
             <ContentWrapper>
-                <LeftSideBar/>
+                <Profile/>
                 <Main/>
                 <RightSideBar/>
             </ContentWrapper>

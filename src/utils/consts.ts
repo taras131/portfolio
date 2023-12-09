@@ -13,10 +13,12 @@ import portfolio_6 from "../assets/images/portfolio_6.png";
 import portfolio_7 from "../assets/images/portfolio_7.png";
 import portfolio_8 from "../assets/images/portfolio_8.png";
 import portfolio_9 from "../assets/images/portfolio_9.png";
+import myPhoto from "../assets/images/my_photo.png";
 import {THistory} from "../models/THistory";
 import {TPortfolio, TPortfolioCategory} from "../models/TPortfolio";
 import {TBlog} from "../models/TBlog";
 import {TContact} from "../models/TContacts";
+import {TProfile} from "../models/TProfile";
 
 export const spriteIds = {
     check: "check",
@@ -28,6 +30,12 @@ export const spriteIds = {
     garage: "garage",
     filling: "filling",
     copyright: "copyright",
+    facebook: "facebook",
+    instagram: "instagram",
+    twitter: "twitter",
+    dribble: "dribble",
+    youtube: "youtube",
+    linkedIn: "linkedIn"
 }
 
 export const servicesTitle = "My Services";
@@ -320,3 +328,38 @@ export const clients = [
     {id: 3, iconId: spriteIds.station},
 ]
 
+export const myProfile: TProfile = {
+    myPhotoPath: myPhoto,
+    name: "Rayan Adlardard",
+    role: "Font-end Developer",
+    social: [spriteIds.facebook, spriteIds.instagram, spriteIds.twitter, spriteIds.linkedIn,
+        spriteIds.youtube, spriteIds.dribble],
+    parameters: [
+        {id: 0, name: "age", value: "24"},
+        {id: 0, name: "residence", value: "BD"},
+        {id: 0, name: "freelance", value: "Available"},
+        {id: 0, name: "address", value: "Dhaka,Bangladesh"},
+    ],
+    languages: {
+        title: "Languages",
+        progress: [
+            {id: 0, name: "Bangla", percent: 100},
+            {id: 1, name: "English", percent: 80},
+            {id: 2, name: "Spanish", percent: 70},
+        ]
+    },
+    skills: {
+        title: "Skills",
+        progress: [
+            {id: 0, name: "Html", percent: 90},
+            {id: 1, name: "CSS", percent: 80},
+            {id: 2, name: "Js", percent: 72},
+            {id: 2, name: "PHP", percent: 75},
+            {id: 2, name: "WordPress", percent: 78},
+        ]
+    },
+    extraSkills: [
+        "Bootstrap, Materialize", "Stylus, Sass, Less", "Gulp, Webpack, Grunt",
+        "GIT Knowledge"
+    ]
+}
