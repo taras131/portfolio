@@ -35,7 +35,10 @@ export const spriteIds = {
     twitter: "twitter",
     dribble: "dribble",
     youtube: "youtube",
-    linkedIn: "linkedIn"
+    linkedIn: "linkedIn",
+    doubleIcon: "doubleIcon",
+    cv: "cv",
+    download: "download",
 }
 
 export const servicesTitle = "My Services";
@@ -329,16 +332,18 @@ export const clients = [
 ]
 
 export const myProfile: TProfile = {
-    myPhotoPath: myPhoto,
-    name: "Rayan Adlardard",
-    role: "Font-end Developer",
-    social: [spriteIds.facebook, spriteIds.instagram, spriteIds.twitter, spriteIds.linkedIn,
-        spriteIds.youtube, spriteIds.dribble],
+    main: {
+        myPhotoPath: myPhoto,
+        name: "Rayan Adlardard",
+        role: "Font-end Developer",
+        social: [spriteIds.facebook, spriteIds.instagram, spriteIds.twitter, spriteIds.linkedIn,
+            spriteIds.youtube, spriteIds.dribble],
+    },
     parameters: [
-        {id: 0, name: "age", value: "24"},
-        {id: 0, name: "residence", value: "BD"},
-        {id: 0, name: "freelance", value: "Available"},
-        {id: 0, name: "address", value: "Dhaka,Bangladesh"},
+        {id: 0, name: "age:", value: "24"},
+        {id: 0, name: "residence:", value: "BD"},
+        {id: 0, name: "freelance:", value: "Available"},
+        {id: 0, name: "address:", value: "Dhaka,Bangladesh"},
     ],
     languages: {
         title: "Languages",

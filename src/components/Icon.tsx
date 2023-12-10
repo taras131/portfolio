@@ -13,7 +13,7 @@ export const Icon: FC<TProps> = ({
                                      iconId,
                                      width = "74",
                                      height = "74",
-                                     isActive = false
+                                     isActive = false,
                                  }) => {
     return (
         <SVG width={width} height={height} viewBox={`0 0 ${width} ${height}`} isActive={isActive}

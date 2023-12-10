@@ -176,8 +176,8 @@
         </defs>
     </g>
     <g id="doubleIcon">
-        <rect x="0.5" y="0.5" width="9" height="9" stroke="#2B2B2B"/>
-        <rect x="5.5" y="5.5" width="9" height="9" stroke="#2B2B2B"/>
+        <rect x="0.5" y="0.5" width="9" height="9" stroke="#FFB400" fill="none"/>
+        <rect x="5.5" y="5.5" width="9" height="9" stroke="#FFB400" fill="none"/>
     </g>
     <g id="contrast">
         <g clip-path="url(#clip0_1_1480)">
@@ -295,6 +295,17 @@
         <defs>
             <clipPath id="clip0_10_1294">
                 <rect width="20" height="20" fill="white"/>
+            </clipPath>
+        </defs>
+    </g>
+    <g id="download">
+        <g clip-path="url(#clip0_1_226)">
+            <path d="M2.33329 12.9523H11.6666V8.28564H12.8333V13.619C12.8333 13.7958 12.7718 13.9654 12.6624 14.0904C12.553 14.2154 12.4047 14.2856 12.25 14.2856H1.74996C1.59525 14.2856 1.44688 14.2154 1.33748 14.0904C1.22808 13.9654 1.16663 13.7958 1.16663 13.619V8.28564H2.33329V12.9523ZM8.16663 6.28564H11.0833L6.99996 10.9523L2.91663 6.28564H5.83329V2.28564H8.16663V6.28564Z"
+                  fill="#2B2B2B"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_1_226">
+                <rect width="14" height="16" fill="white" transform="translate(0 0.285645)"/>
             </clipPath>
         </defs>
     </g>

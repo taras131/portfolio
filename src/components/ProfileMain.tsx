@@ -3,28 +3,21 @@ import styled from "styled-components";
 import {Icon} from "./Icon";
 import {spriteIds} from "../utils/consts";
 import {ProfileSocialList} from "./ProfileSocialList";
+import {TProfileMain} from "../models/TProfile";
 
 type TProps = {
-    imgPatch: string,
-    name: string,
-    role: string,
-    social: string [],
+    profileMain: TProfileMain
 }
 
-export const ProfileAvatar: FC<TProps> = ({
-                                              imgPatch,
-                                              name,
-                                              role,
-                                              social
-                                          }) => {
+export const ProfileMain: FC<TProps> = ({profileMain}) => {
     return (
         <Wrapper>
             <PhotoWrapper>
-                <img src={imgPatch} alt="my photo"/>
+                <img src={profileMain.myPhotoPath} alt="my photo"/>
             </PhotoWrapper>
-            <h2>{name}</h2>
-            <p>{role}</p>
-            <ProfileSocialList social={social}/>
+            <h2>{profileMain.name}</h2>
+            <p>{profileMain.role}</p>
+            <ProfileSocialList social={profileMain.social}/>
         </Wrapper>
     );
 };
@@ -34,6 +27,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative;
+  padding-bottom: 25px;
 
   & h2 {
     margin-top: 30px;
@@ -53,7 +48,18 @@ const Wrapper = styled.div`
     text-transform: capitalize;
     color: ${({theme}) => theme.colors.black.secondary}
   }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: ${({theme}) => theme.colors.backgroundColor};
+    position: absolute;
+    bottom: 0;
+  }
 `;
+
 const PhotoWrapper = styled.div`
   width: 150px;
   height: 150px;

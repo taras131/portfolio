@@ -22,5 +22,17 @@ const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+  padding-bottom: 25px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: ${({theme}) => theme.colors.backgroundColor};
+    position: absolute;
+    bottom: 0;
+  }
 `;
 

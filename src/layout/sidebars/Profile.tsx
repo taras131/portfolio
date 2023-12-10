@@ -1,20 +1,25 @@
 import React from 'react';
 import styled from "styled-components";
-import {ProfileAvatar} from "../../components/ProfileAvatar";
-import {myProfile} from "../../utils/consts";
+import {ProfileMain} from "../../components/ProfileMain";
+import {myProfile, spriteIds} from "../../utils/consts";
 import {ProfileParametersList} from "../../components/ProfileParametersList";
 import {ProfileSkills} from "../../components/ProfileSkills";
+import {ProfileExtraSkills} from "../../components/ProfileExtraSkills";
+import {Button} from "../../components/Button";
+import {Icon} from "../../components/Icon";
 
 export const Profile = () => {
     return (
         <Wrapper>
-            <ProfileAvatar imgPatch={myProfile.myPhotoPath}
-                           name={myProfile.name}
-                           role={myProfile.role}
-                           social={myProfile.social}/>
+            <ProfileMain profileMain={myProfile.main}/>
             <ProfileParametersList parameters={myProfile.parameters}/>
             <ProfileSkills skills={myProfile.languages}/>
             <ProfileSkills skills={myProfile.skills}/>
+            <ProfileExtraSkills extraSkills={myProfile.extraSkills}/>
+            <Button variant={"contained"} borderRadius={"0px"}>
+                Download cv
+                <Icon iconId={spriteIds.download} width={"14px"} height={"16px"}/>
+            </Button>
         </Wrapper>
     );
 };
@@ -28,4 +33,10 @@ const Wrapper = styled.aside`
   gap: 25px;
   align-items: center;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+
+  & button {
+    gap: 20px;
+  }
+
+
 `
