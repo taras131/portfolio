@@ -6,7 +6,7 @@ import {spriteIds} from "../utils/consts";
 export const Footer = () => {
     return (
         <Wrapper>
-            <Icon iconId={spriteIds.copyright} width={"24px"} height={"24px"}/>
+            <Icon iconId={spriteIds.copyright} width={24} height={24}/>
             <p>2021 All Rights Reserved.Ojjomedia</p>
         </Wrapper>
     );

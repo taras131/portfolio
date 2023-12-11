@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import sprite from "../assets/icons/icons-sprite.svg"
 import {Icon} from "./Icon";
 import {Button} from "./Button";
 
@@ -19,7 +18,7 @@ export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
             {!iconId && (
                 <Button variant={"text"}>
                     ORDER NOW
-                    <Icon iconId={"rightArrow"} height={"20"} width={"20"}/>
+                    <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>
             )}
         </Wrapper>

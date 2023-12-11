@@ -1,8 +1,8 @@
 import React from 'react';
 import {TemplateSection} from "./TemplateSection";
 import {recommendations, recommendationsDescription, recommendationsTitle} from "../utils/consts";
-import {RecommendationsList} from "./RecommendationsList";
-import {Pagination} from "./Pagination";
+import {RecommendationsList} from "../components/RecommendationsList";
+import {Pagination} from "../components/Pagination";
 
 export const RecommendationsSection = () => {
     return (

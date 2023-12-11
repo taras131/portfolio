@@ -1,7 +1,7 @@
 import React from 'react';
 import {TemplateSection} from "./TemplateSection";
 import {blogDescription, blogs, blogTitle} from "../utils/consts";
-import {BlogList} from "./BlogList";
+import {BlogList} from "../components/BlogList";
 
 export const BlogSection = () => {
     return (

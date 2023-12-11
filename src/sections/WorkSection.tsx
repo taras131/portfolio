@@ -1,7 +1,7 @@
 import React from 'react';
 import {TemplateSection} from "./TemplateSection";
 import {workDescription, workHistory, workTitle} from "../utils/consts";
-import {HistoryList} from "./HistoryList";
+import {HistoryList} from "../components/HistoryList";
 
 export const WorkSection = () => {
     return (

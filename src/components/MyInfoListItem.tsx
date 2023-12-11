@@ -16,8 +16,8 @@ export const MyInfoListItem: FC<TProps> = ({contact}) => {
         <Wrapper>
             <IconWrapper>
                 <Icon iconId={contact.iconId}
-                      width={"18px"}
-                      height={"18px"}/>
+                      width={18}
+                      height={18}/>
             </IconWrapper>
             <ContactItems>{contactItemsList}</ContactItems>
         </Wrapper>

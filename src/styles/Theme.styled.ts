@@ -7,6 +7,14 @@ export const theme = {
         black: {
             primary: "#2B2B2B",
             secondary: "#767676"
-        }
+        },
+
+        accent : "#FFB400",
+
+        textPrimary: "#2B2B2B",
+        textSecondary: "#767676",
+
+        backgroundPrimary: "#FFFFFF",
+        backgroundSecondary: "#F0F0F6",
     }
 }

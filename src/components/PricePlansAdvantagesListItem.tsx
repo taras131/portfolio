@@ -9,7 +9,6 @@ type TProps = {
 }
 
 export const PricePlansAdvantagesListItem: FC<TProps> = ({plansAdvantage, isInclude}) => {
-    console.log(isInclude)
     return (
         <Wrapper isInclude={isInclude}>
             <svg xmlns="http://www.w3.org/2000/svg"

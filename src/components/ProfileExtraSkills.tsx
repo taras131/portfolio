@@ -10,7 +10,7 @@ type TProps = {
 export const ProfileExtraSkills: FC<TProps> = ({extraSkills}) => {
     const extraSkillsList = extraSkills.map(extraSkill => {
         return (<li key={extraSkill}>
-            <Icon iconId={spriteIds.doubleIcon} width={"15px"} height={"15px"}/>
+            <Icon iconId={spriteIds.doubleIcon} width={15} height={15}/>
             <p>{extraSkill}</p>
         </li>)
     })

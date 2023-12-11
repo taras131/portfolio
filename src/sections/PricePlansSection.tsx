@@ -1,7 +1,7 @@
 import React from 'react';
 import {TemplateSection} from "./TemplateSection";
 import {plansTitle, plansDescription, plans} from "../utils/consts";
-import {PricePlansList} from "./PricePlansList";
+import {PricePlansList} from "../components/PricePlansList";
 
 export const PricePlansSection = () => {
     return (

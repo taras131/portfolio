@@ -33,5 +33,11 @@ const Title = styled.div`
   & p {
     margin-top: 25px;
     margin-bottom: 50px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 160% */
+    text-transform: capitalize;
+    color: ${({theme}) => theme.colors.textSecondary}
   }
 `

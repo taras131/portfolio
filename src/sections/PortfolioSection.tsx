@@ -1,8 +1,8 @@
 import React from 'react';
 import {TemplateSection} from "./TemplateSection";
 import {portfolioCategories, portfolioDescription, portfolioTitle, portfolioWorks} from "../utils/consts";
-import {PortfolioList} from "./PortfolioList";
-import {PortfolioNav} from "./PortfolioNav";
+import {PortfolioList} from "../components/PortfolioList";
+import {PortfolioNav} from "../components/PortfolioNav";
 
 export const PortfolioSection = () => {
     return (

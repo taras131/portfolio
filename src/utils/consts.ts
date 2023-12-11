@@ -39,6 +39,16 @@ export const spriteIds = {
     doubleIcon: "doubleIcon",
     cv: "cv",
     download: "download",
+    star: "star",
+    contrast: "contrast",
+    home: "home",
+    popUp: "popUp",
+    portfolio: "portfolio",
+    blog: "blog",
+    code: "code",
+    rightArrow: "rightArrow",
+    arrow: "arrow"
+
 }
 
 export const servicesTitle = "My Services";
@@ -341,9 +351,9 @@ export const myProfile: TProfile = {
     },
     parameters: [
         {id: 0, name: "age:", value: "24"},
-        {id: 0, name: "residence:", value: "BD"},
-        {id: 0, name: "freelance:", value: "Available"},
-        {id: 0, name: "address:", value: "Dhaka,Bangladesh"},
+        {id: 1, name: "residence:", value: "BD"},
+        {id: 2, name: "freelance:", value: "Available"},
+        {id: 3, name: "address:", value: "Dhaka,Bangladesh"},
     ],
     languages: {
         title: "Languages",
@@ -359,8 +369,8 @@ export const myProfile: TProfile = {
             {id: 0, name: "Html", percent: 90},
             {id: 1, name: "CSS", percent: 80},
             {id: 2, name: "Js", percent: 72},
-            {id: 2, name: "PHP", percent: 75},
-            {id: 2, name: "WordPress", percent: 78},
+            {id: 3, name: "PHP", percent: 75},
+            {id: 4, name: "WordPress", percent: 78},
         ]
     },
     extraSkills: [

@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {spriteIds} from "../utils/consts";
 import {Icon} from "./Icon";
 
 type TProps = {
@@ -11,8 +10,8 @@ export const ProfileSocialListItem: FC<TProps> = ({socialItem}) => {
     return (
         <Wrapper>
             <Icon iconId={socialItem}
-                  height={"14px"}
-                  width={"14px"}/>
+                  height={14}
+                  width={14}/>
         </Wrapper>
     );
 };

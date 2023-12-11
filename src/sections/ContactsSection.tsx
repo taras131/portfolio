@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {ContactsMyInfo} from "./ContactsMyInfo";
-import {ContactsLeaveInfo} from "./ContactsLeaveInfo";
+import {ContactsMyInfo} from "../components/ContactsMyInfo";
+import {ContactsLeaveInfo} from "../components/ContactsLeaveInfo";
 
 export const ContactsSection = () => {
     return (

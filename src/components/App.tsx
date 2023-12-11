@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {Main} from "../layout/main/Main";
-import {RightSideBar} from "../layout/sidebars/RightSideBar";
-import {Profile} from "../layout/sidebars/Profile";
+import {Main} from "../layout/Main";
+import {Navigation} from "../layout/Navigation";
+import {Profile} from "../layout/Profile";
 
 export function App() {
     return (
@@ -9,16 +9,14 @@ export function App() {
             <ContentWrapper>
                 <Profile/>
                 <Main/>
-                <RightSideBar/>
+                <Navigation/>
             </ContentWrapper>
         </Wrapper>
     );
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  margin: 0 auto;
   background-color: ${({theme}) => theme.colors.backgroundColor};
   width: 100%;
 `
@@ -27,4 +25,5 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: start;
+  gap: 20px;
 `

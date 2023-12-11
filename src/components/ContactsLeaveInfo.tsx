@@ -1,38 +1,51 @@
-import React, {useId} from 'react';
+import React, {useId, useState} from 'react';
 import styled from "styled-components";
 import {Input} from "./Input";
 import {Button} from "./Button";
-import {Textarea} from "./Textarea";
 
 export const ContactsLeaveInfo = () => {
     const nameId = useId();
     const emailId = useId();
     const subjectId = useId();
     const messageId = useId();
+    const [inputValues, setInputValues] = useState({
+        fullName: "",
+        email: "",
+        subject: "",
+        message: ""
+    })
+    const handleChange = (e: any) => {
+        setInputValues(prev => ({...prev, [e.target.name]: e.target.value}))
+    }
     return (
         <Wrapper>
             <h2>Leave us your info</h2>
-            <Content>
+            <Form>
                 <div>
                     <label htmlFor={nameId}>Your Full Name ( Required)</label>
-                    <Input id={nameId} value={"asdgfs"}/>
+                    <Input name={"fullName"} id={nameId} value={inputValues.fullName} onChange={handleChange}/>
                 </div>
                 <div>
                     <label htmlFor={emailId}>Your Email ( Required)</label>
-                    <Input id={emailId} value={"asdgfs"}/>
+                    <Input name={"email"} id={emailId} value={inputValues.email} onChange={handleChange}/>
                 </div>
                 <div>
                     <label htmlFor={subjectId}>Subject</label>
-                    <Input id={subjectId} value={"asdgfs"}/>
+                    <Input name={"subject"} id={subjectId} value={inputValues.subject} onChange={handleChange}/>
                 </div>
                 <div>
                     <label htmlFor={messageId}>Your Message</label>
-                    <Textarea id={messageId} value={"asdgfs"}/>
+                    <Input as={"textarea"}
+                           rows={5}
+                           name={"message"}
+                           id={messageId}
+                           value={inputValues.message}
+                           onChange={handleChange}/>
                 </div>
                 <Button variant={"contained"} borderRadius={"0px"}>
                     send message
                 </Button>
-            </Content>
+            </Form>
         </Wrapper>
     );
 };
@@ -40,7 +53,7 @@ export const ContactsLeaveInfo = () => {
 const Wrapper = styled.div`
 
 `
-const Content = styled.form`
+const Form = styled.form`
   margin-top: 50px;
   min-height: 665px;
   padding: 25px;
