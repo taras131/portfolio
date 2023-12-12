@@ -24,7 +24,7 @@ export const Profile = () => {
     );
 };
 
-const Wrapper = styled.aside`
+const Wrapper = styled.article`
   min-height: 1315px;
   width: 305px;
   padding: 50px 45px 25px 40px;
@@ -32,6 +32,9 @@ const Wrapper = styled.aside`
   flex-direction: column;
   gap: 25px;
   align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 
   & button {

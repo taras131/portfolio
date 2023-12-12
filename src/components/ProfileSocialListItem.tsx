@@ -16,7 +16,7 @@ export const ProfileSocialListItem: FC<TProps> = ({socialItem}) => {
     );
 };
 
-const Wrapper = styled.ul`
+const Wrapper = styled.li`
   width: 24px;
   height: 24px;
   border-radius: 100%;

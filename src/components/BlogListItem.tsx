@@ -15,8 +15,8 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
             <div>
                 <h3>{blog.title}</h3>
                 <p>{blog.text}</p>
-                <Button variant={"text"}>
-                    Learn more
+                <Button variant={"text"} fontSize={18} fontWeight={500}>
+                    <span>Learn more</span>
                     <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>
             </div>
@@ -32,7 +32,7 @@ const Wrapper = styled.li`
   & img {
     width: 100%;
     object-fit: cover;
-    height: 300px;
+    min-height: 300px;
   }
 
   & div {

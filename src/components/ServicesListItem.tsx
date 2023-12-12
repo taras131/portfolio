@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {Icon} from "./Icon";
 import {Button} from "./Button";
 
@@ -25,7 +25,11 @@ export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
     );
 };
 
-const Wrapper = styled.li`
+type WrapperProps = {
+    iconId?: string
+}
+
+const Wrapper = styled.li<WrapperProps>`
   height: 225px;
   width: 310px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
@@ -34,13 +38,29 @@ const Wrapper = styled.li`
   align-items: center;
   padding: 25px;
 
+
   & h3 {
-    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 123.6%; /* 22.248px */
+    text-transform: capitalize;
+    ${(props) => props.iconId && css<WrapperProps>`
+      margin-top: 25px;
+    `}
+
+    ${(props) => !props.iconId && css<WrapperProps>`
+      margin-top: 5px;
+    `}
   }
 
   & p {
     margin-top: 15px;
     margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px; /* 160% */
+    text-transform: capitalize;
+    color: ${({theme}) => theme.colors.textSecondary};
   }
 `
 

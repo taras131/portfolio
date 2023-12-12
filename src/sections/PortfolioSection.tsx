@@ -4,13 +4,14 @@ import {portfolioCategories, portfolioDescription, portfolioTitle, portfolioWork
 import {PortfolioList} from "../components/PortfolioList";
 import {PortfolioNav} from "../components/PortfolioNav";
 
-export const PortfolioSection = () => {
+export const PortfolioSection = React.forwardRef<HTMLHeadingElement>((props, ref) => {
     return (
         <TemplateSection sectionTitle={portfolioTitle}
-                         sectionDescription={portfolioDescription}>
+                         sectionDescription={portfolioDescription}
+                         ref={ref}>
             <PortfolioNav categories={portfolioCategories}/>
             <PortfolioList portfolioWorks={portfolioWorks}/>
         </TemplateSection>
     );
-};
+});
 

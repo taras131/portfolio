@@ -6,7 +6,7 @@ export type TPlan = {
     id: number,
     isPopular: boolean,
     name: string,
-    costHourInDollars: string,
+    priceHourInDollars: string,
     description: string,
     advantagesIdList: number []
 }

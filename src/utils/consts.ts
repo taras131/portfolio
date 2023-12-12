@@ -19,7 +19,8 @@ import {TPortfolio, TPortfolioCategory} from "../models/TPortfolio";
 import {TBlog} from "../models/TBlog";
 import {TContact} from "../models/TContacts";
 import {TProfile} from "../models/TProfile";
-
+import {TNavigation} from "../models/TNavigation";
+//sprite ids
 export const spriteIds = {
     check: "check",
     contact: "contact",
@@ -47,8 +48,9 @@ export const spriteIds = {
     blog: "blog",
     code: "code",
     rightArrow: "rightArrow",
-    arrow: "arrow"
-
+    arrow: "arrow",
+    plus: "plus",
+    mobile: "mobile"
 }
 
 export const servicesTitle = "My Services";
@@ -68,7 +70,7 @@ export const services: TService [] = [
         iconId: ""
     }
 ]
-
+//price plans
 export const plansTitle = "Price plans";
 export const plansDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit " +
     "officia consequat duis enim velit mollit. lorem ipsum";
@@ -87,7 +89,7 @@ export const plans: TPlan[] = [
         id: 0,
         isPopular: false,
         name: "Silver",
-        costHourInDollars: "0.00",
+        priceHourInDollars: "0.00",
         description: "For most Businesses That Want to Optimize Web Queries",
         advantagesIdList: [0, 1]
     },
@@ -95,7 +97,7 @@ export const plans: TPlan[] = [
         id: 1,
         isPopular: true,
         name: "Gold",
-        costHourInDollars: "50.00",
+        priceHourInDollars: "50.00",
         description: "For most Businesses That Want to Optimize Web Queries",
         advantagesIdList: [0, 1, 2, 3]
     },
@@ -103,12 +105,12 @@ export const plans: TPlan[] = [
         id: 2,
         isPopular: false,
         name: "Dimond",
-        costHourInDollars: "80.00",
+        priceHourInDollars: "80.00",
         description: "For most Businesses That Want to Optimize Web Queries",
         advantagesIdList: [0, 1, 2, 3, 4, 5, 6, 7]
     },
 ]
-
+//recommendations
 export const recommendationsTitle = "Recommendations";
 export const recommendationsDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." +
     " Velit officia consequat duis enim velit mollit. lorem ipsum";
@@ -129,8 +131,8 @@ export const recommendations: TRecommendation [] = [
         id: 1,
         rating: 5,
         title: "Amazing work!",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna" +
-            "viverra morbi. Morbi donec amet....",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....",
         author: {
             name: "Tiana Philips",
             role: "Photographer",
@@ -325,7 +327,7 @@ export const myContacts: TContact [] = [
     },
     {
         id: 2,
-        iconId: spriteIds.contact,
+        iconId: spriteIds.mobile,
         items: [
             {id: 0, name: "Support services:", value: "15369"},
             {id: 1, name: "Office:", value: "+58 (021)356 587 235"},
@@ -378,3 +380,12 @@ export const myProfile: TProfile = {
         "GIT Knowledge"
     ]
 }
+//navigation
+export const navigation: TNavigation [] = [
+    {id: 0, title: "Home", iconId: spriteIds.home},
+    {id: 1, title: "Price", iconId: spriteIds.code},
+    {id: 2, title: "Education", iconId: spriteIds.cv},
+    {id: 3, title: "Portfolio", iconId: spriteIds.portfolio},
+    {id: 4, title: "Blog", iconId: spriteIds.blog},
+    {id: 5, title: "Contact", iconId: spriteIds.contact},
+]

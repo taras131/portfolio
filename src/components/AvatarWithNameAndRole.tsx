@@ -14,7 +14,7 @@ export const AvatarWithNameAndRole: FC<TProps> = ({author}) => {
             </Avatar>
             <Description>
                 <h4>{author.name}</h4>
-                <p>{author.role}</p>
+                <span>{author.role}</span>
             </Description>
         </Wrapper>
     );
@@ -22,7 +22,8 @@ export const AvatarWithNameAndRole: FC<TProps> = ({author}) => {
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 25px;
   margin-top: 30px;
 `
 const Avatar = styled.div`
@@ -41,25 +42,23 @@ const Description = styled.div`
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  margin-top: 18px;
+ 
 
   & h4 {
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
     line-height: 123.6%;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.black.primary}
+    color: ${({theme}) => theme.colors.textPrimary};
   }
 
-  & p {
-    margin-top: 5px;
+  & span {
+    margin-top: 0;
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
     line-height: 24px;
     text-transform: capitalize;
-    color: ${({theme}) => theme.colors.black.secondary}
+    color: ${({theme}) => theme.colors.textSecondary};
   }
 `
 

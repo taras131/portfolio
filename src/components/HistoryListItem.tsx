@@ -13,7 +13,7 @@ export const HistoryListItem: FC<TProps> = ({historyItem}) => {
             <div>
                 <h3>{historyItem.name}</h3>
                 <Role>
-                    <p>{historyItem.role}</p>
+                    <span>{historyItem.role}</span>
                     <TextInBox text={`${historyItem.dateStart} - ${historyItem.dateFinish}`}/>
                 </Role>
             </div>
@@ -21,7 +21,6 @@ export const HistoryListItem: FC<TProps> = ({historyItem}) => {
                 <h4>{historyItem.discipline}</h4>
                 <p>{historyItem.description}</p>
             </Description>
-
         </Wrapper>
     );
 };
@@ -32,6 +31,14 @@ const Wrapper = styled.li`
   display: flex;
   align-items: start;
   justify-content: space-between;
+
+  & h3 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123.6%; /* 22.248px */
+    text-transform: capitalize;
+  }
 `
 
 const Role = styled.div`
@@ -40,7 +47,7 @@ const Role = styled.div`
   gap: 20px;
   margin-top: 27px;
 
-  & p {
+  & span {
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -52,6 +59,7 @@ const Role = styled.div`
 const Description = styled.div`
   max-width: 536px;
   width: 100%;
+
   & h4 {
     font-size: 18px;
     font-style: normal;
@@ -59,6 +67,7 @@ const Description = styled.div`
     line-height: 123.6%; /* 22.248px */
     text-transform: capitalize;
   }
+
   & p {
     margin-top: 28px;
     font-size: 15px;
@@ -66,5 +75,6 @@ const Description = styled.div`
     font-weight: 400;
     line-height: 24px; /* 160% */
     text-transform: capitalize;
+    color: ${({theme}) => theme.colors.textSecondary};
   }
 `

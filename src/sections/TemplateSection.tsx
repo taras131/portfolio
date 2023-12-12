@@ -5,11 +5,12 @@ type TProps = {
     sectionTitle: string,
     sectionDescription: string,
     children: React.ReactNode
+    ref?: any
 }
 
-export const TemplateSection: FC<TProps> = ({sectionTitle, sectionDescription, children}) => {
+export const TemplateSection: FC<TProps> = ({sectionTitle, sectionDescription, children, ref}) => {
     return (
-        <Wrapper>
+        <Wrapper ref={ref}>
             <Title>
                 <h2>{sectionTitle}</h2>
                 <p>{sectionDescription}</p>
@@ -20,7 +21,7 @@ export const TemplateSection: FC<TProps> = ({sectionTitle, sectionDescription, c
 };
 
 const Wrapper = styled.section`
-  margin-top: 70px;
+  padding-top: 70px;
 `
 const Title = styled.div`
   max-width: 438px;
@@ -28,6 +29,14 @@ const Title = styled.div`
 
   & h2, p {
     text-align: center;
+  }
+
+  & h2 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 123.6%; /* 39.552px */
+    text-transform: capitalize;
   }
 
   & p {

@@ -9,9 +9,15 @@ type TProps = {
 }
 
 export const MyInfoListItem: FC<TProps> = ({contact}) => {
-    const contactItemsList = contact.items.map(item => (<NameWithValue key={item.id}
-                                                                       name={item.name}
-                                                                       value={item.value}/>))
+    const contactItemsList = contact.items.map(item => {
+            return (<li key={item.id}>
+                <NameWithValue
+                    name={item.name}
+                    value={item.value}/>
+            </li>)
+        }
+    )
+
     return (
         <Wrapper>
             <IconWrapper>
@@ -44,6 +50,7 @@ const IconWrapper = styled.div`
 
 const ContactItems = styled.ul`
   margin-top: 30px;
+
   & li {
     margin-bottom: 16px;
   }

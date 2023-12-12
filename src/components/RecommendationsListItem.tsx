@@ -13,7 +13,7 @@ export const RecommendationsListItem: FC<TProps> = ({recommendation}) => {
         <Wrapper>
             <Rating rating={recommendation.rating}/>
             <h3>{recommendation.title}</h3>
-            <p>{recommendation.description}</p>
+            <Description>{recommendation.description}</Description>
             <AvatarWithNameAndRole author={recommendation.author}/>
         </Wrapper>
     );
@@ -22,16 +22,26 @@ export const RecommendationsListItem: FC<TProps> = ({recommendation}) => {
 const Wrapper = styled.li`
   width: 310px;
   height: 323px;
-  flex-shrink: 0;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
   padding: 25px;
 
   & h3 {
-    margin-top: 16px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123.6%; /* 22.248px */
+    text-transform: capitalize;
   }
+`
 
-  & p {
-    margin-top: 18px;
-  }
+const Description = styled.p`
+  margin-top: 18px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 160% */
+  text-transform: capitalize;
+  color: ${({theme}) => theme.colors.textSecondary};
 `
 

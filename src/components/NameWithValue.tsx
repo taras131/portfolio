@@ -14,13 +14,13 @@ export const NameWithValue: FC<TProps> = ({name, value}) => {
         </Wrapper>
     );
 };
-const Wrapper = styled.li`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: ${({theme}) => theme.colors.black.secondary}
 `
-const Name = styled.p`
+const Name = styled.span`
   font-size: 18px;
   font-style: normal;
   font-weight: 500;

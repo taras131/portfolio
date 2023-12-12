@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styled from "styled-components";
 import myPhoto from "../assets/images/my_photo.png";
+import background from "../assets/images/mainBackground.png";
 import {FlexContainer} from "../components/FlexContainer";
 import {Button} from "../components/Button";
 import {Icon} from "../components/Icon";
 import {spriteIds} from "../utils/consts";
 
-export const MainSection = () => {
+
+export const MainSection: FC = () => {
     return (
-        <AboutMeWrapper>
-            <FlexContainer align={"center"} justify={"space-around"}>
+        <Wrapper>
+            <Background src={background} alt="figures"/>
+            <FlexContainer align={"center"} justify={"space-between"}>
                 <div>
                     <h1>
                         I’m Taras Zverev
@@ -27,20 +30,24 @@ export const MainSection = () => {
                 </div>
                 <Photo src={myPhoto} alt="my_photo"/>
             </FlexContainer>
-        </AboutMeWrapper>
+
+
+        </Wrapper>
     );
 };
 
-const AboutMeWrapper = styled.div`
+const Wrapper = styled.div`
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
   padding: 0 60px;
   min-height: 467px;
+  position: relative;
 
   & h1 {
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: 123.6%; /* 59.328px */
+    z-index: 1;
   }
 
   & span {
@@ -59,11 +66,19 @@ const AboutMeWrapper = styled.div`
     font-kerning: none;
     font-feature-settings: 'calt' off;
     color: ${({theme}) => theme.colors.textSecondary}
+    z-index: 1;
   }
 `
 
 const Photo = styled.img`
-  width: 326px;
-  height: 459px;
+  height: 100%;
   object-fit: cover;
+  z-index: 1;
+`
+
+const Background = styled.img`
+  position: absolute;
+  padding-top: 10px;
+  margin: 0 auto;
+  z-index: 0;
 `

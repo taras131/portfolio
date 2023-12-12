@@ -2,14 +2,29 @@ import styled from 'styled-components';
 import {Main} from "../layout/Main";
 import {Navigation} from "../layout/Navigation";
 import {Profile} from "../layout/Profile";
+import React, {useRef, useState} from "react";
+import {navigation} from "../utils/consts";
+
 
 export function App() {
+    const [activeId, setActiveId] = useState(navigation[0].id)
+    const mainRef = useRef<HTMLHeadingElement>(null);
+    const portfolioRef = useRef<HTMLHeadingElement>(null);
+    const contactsRef = useRef<HTMLHeadingElement>(null);
+    const handleActiveChange = (id: number) => () => {
+        switch (id) {
+            case navigation[3].id:
+                if (portfolioRef.current) portfolioRef.current.scrollIntoView({behavior: "smooth"});
+                break;
+        }
+        setActiveId(id)
+    }
     return (
         <Wrapper>
             <ContentWrapper>
                 <Profile/>
-                <Main/>
-                <Navigation/>
+                <Main refs={{mainRef, portfolioRef, contactsRef}}/>
+                <Navigation activeId={activeId} handleActiveChange={handleActiveChange}/>
             </ContentWrapper>
         </Wrapper>
     );

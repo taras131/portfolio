@@ -32,16 +32,21 @@ type TWrapper = {
 const Wrapper = styled.li<TWrapper>`
   display: flex;
   align-items: center;
-  margin-bottom: 17px;
+  margin-bottom: 15px;
 
   & svg {
     margin-right: 15px;
-    fill: ${props => props.isInclude ? props.theme.colors.primary : "none"};
+    fill: ${props => props.isInclude ? props.theme.colors.accent : props.theme.colors.textSecondary};
   }
 
   & span {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 160% */
+    text-transform: capitalize;
     color: ${props => props.isInclude
-            ? props.theme.colors.black.primary
-            : props.theme.colors.black.secondary};
+            ? props.theme.colors.textPrimary
+            : props.theme.colors.textSecondary};
   }
 `

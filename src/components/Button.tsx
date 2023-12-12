@@ -8,6 +8,7 @@ type TProps = {
     type?: string
     fontSize?: number
     height?: string
+    fontWeight?: number
 }
 
 export const Button: FC<TProps> = ({
@@ -16,10 +17,15 @@ export const Button: FC<TProps> = ({
                                        borderRadius = "30px",
                                        type,
                                        fontSize = 14,
-                                       height
+                                       height,
+                                       fontWeight = 700
                                    }) => {
     return (
-        <Wrapper variant={variant} borderRadius={borderRadius} fontSize={fontSize} height={height}>
+        <Wrapper variant={variant}
+                 borderRadius={borderRadius}
+                 fontSize={fontSize}
+                 height={height}
+                 fontWeight={fontWeight}>
             {children}
         </Wrapper>
     );
@@ -30,14 +36,13 @@ type TWrapper = {
     borderRadius: string,
     fontSize: number,
     height?: string
+    fontWeight: number
 }
 
 const Wrapper = styled.button<TWrapper>`
   border-radius: ${props => props.borderRadius};
   font-size: ${props => props.fontSize + "px"};
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-weight: ${props => props.fontWeight};
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -50,12 +55,20 @@ const Wrapper = styled.button<TWrapper>`
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
+
+    &:hover {
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    }
   `}
   ${props => props.variant === "contained" && css<TWrapper>`
     background: ${({theme}) => theme.colors.primary};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
+
+    &:hover {
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    }
   `}
   ${props => props.variant === "text" && css<TWrapper>`
     color: ${({theme}) => theme.colors.primary};
@@ -65,10 +78,7 @@ const Wrapper = styled.button<TWrapper>`
   `}
   & svg {
     margin-left: 10px;
-
   }
 
-  &:hover {
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
-  }
+
 `

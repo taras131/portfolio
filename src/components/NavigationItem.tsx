@@ -6,24 +6,25 @@ import styled, {css} from "styled-components";
 type TProps = {
     title: string,
     iconId: string,
-    isActive?: boolean
+    isActive: boolean
+    handleClick: () => void
 }
 
 export const NavigationItem: FC<TProps> = ({
                                                title,
                                                iconId,
-                                               isActive = false
+                                               isActive,
+                                               handleClick
                                            }) => {
     return (
-        <Wrapper>
+        <Wrapper isActive={isActive}>
             <PopUp isActive={isActive}>
                 <Icon iconId={spriteIds.popUp} width={65} height={33}/>
                 <p>{title}</p>
             </PopUp>
-            <NavIconWrapper isActive={isActive}>
+            <NavIconWrapper isActive={isActive} onClick={handleClick}>
                 <Icon iconId={iconId} height={18} width={18}/>
             </NavIconWrapper>
-
         </Wrapper>
     );
 };
@@ -32,12 +33,21 @@ type TStyledProps = {
     isActive: boolean
 }
 
-const Wrapper = styled.li`
+const Wrapper = styled.li<TStyledProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 5px;
+
+  & svg {
+    ${props => props.isActive && css<TStyledProps>`
+      fill: ${({theme}) => theme.colors.textPrimary};
+    `}
+    ${props => !props.isActive && css<TStyledProps>`
+      fill: ${({theme}) => theme.colors.textSecondary};
+    `}
+  }
 `;
 
 const PopUp = styled.div<TStyledProps>`
@@ -70,6 +80,10 @@ const NavIconWrapper = styled.div<TStyledProps>`
   width: 40px;
   height: 40px;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${({theme}) => theme.colors.primary};
+  }
 
   ${props => props.isActive && css<TStyledProps>`
     background-color: ${({theme}) => theme.colors.primary};

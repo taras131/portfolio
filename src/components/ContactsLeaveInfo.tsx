@@ -43,7 +43,7 @@ export const ContactsLeaveInfo = () => {
                            onChange={handleChange}/>
                 </div>
                 <Button variant={"contained"} borderRadius={"0px"}>
-                    send message
+                    <span>send message</span>
                 </Button>
             </Form>
         </Wrapper>
@@ -59,6 +59,14 @@ const Form = styled.form`
   padding: 25px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 
+  & span {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
   & div {
     padding-bottom: 25px;
 
@@ -71,8 +79,19 @@ const Form = styled.form`
       color: ${({theme}) => theme.colors.black.secondary};
     }
 
-    & input {
+    & input, textarea {
       margin-top: 8px;
+      font-size: 16px;
+    }
+
+    & textarea {
+      height: 210px;
+      padding: 12px;
+      resize:none;
+
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
     }
   }
 `

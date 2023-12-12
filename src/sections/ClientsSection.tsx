@@ -11,12 +11,14 @@ export const ClientsSection = () => {
     ))
     return (
         <Wrapper>
-            {clientList}
+            <ul>
+                {clientList}
+            </ul>
         </Wrapper>
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   margin-top: 70px;
   display: flex;
   align-items: center;

@@ -7,4 +7,8 @@ export const Input = styled.input`
   border: none;
   padding-left: 12px;
   background-color: ${({theme}) => theme.colors.backgroundColor};
+  &:focus {
+    outline: 2px solid ${({theme}) => theme.colors.accent};
+  }
+ 
 `;

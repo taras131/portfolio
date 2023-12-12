@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ServicesSection} from "../sections/ServicesSection";
 import styled from "styled-components";
 import {PricePlansSection} from "../sections/PricePlansSection";
@@ -12,19 +12,26 @@ import {ClientsSection} from "../sections/ClientsSection";
 import {Footer} from "./Footer";
 import {MainSection} from "../sections/MainSection";
 
+type TProps = {
+    refs: {
+        mainRef: any,
+        portfolioRef: any,
+        contactsRef: any
+    }
+}
 
-export const Main = () => {
+export const Main: FC<TProps> = ({refs}) => {
     return (
         <Wrapper>
-            <MainSection/>
+            <MainSection />
             <ServicesSection/>
             <PricePlansSection/>
             <RecommendationsSection/>
             <EducationSection/>
             <WorkSection/>
-            <PortfolioSection/>
-            <BlogSection/>
-            <ContactsSection/>
+            <PortfolioSection ref={refs.portfolioRef}/>
+            <BlogSection />
+            <ContactsSection />
             <ClientsSection/>
             <Footer/>
         </Wrapper>
