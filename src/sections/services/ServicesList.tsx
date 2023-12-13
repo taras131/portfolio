@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {ServicesListItem} from "./ServicesListItem";
 import styled from "styled-components";
-import {TService} from "../models/TServices";
+import {TService} from "../../models/TServices";
 
 type TProps = {
     services: TService []

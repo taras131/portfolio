@@ -50,7 +50,8 @@ export const spriteIds = {
     rightArrow: "rightArrow",
     arrow: "arrow",
     plus: "plus",
-    mobile: "mobile"
+    mobile: "mobile",
+    close: "close"
 }
 
 export const servicesTitle = "My Services";

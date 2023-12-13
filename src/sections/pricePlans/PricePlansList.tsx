@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TPlan} from "../models/TPricePlans";
+import {TPlan} from "../../models/TPricePlans";
 import {PricePlansListItem} from "./PricePlansListItem";
 import styled from "styled-components";
 

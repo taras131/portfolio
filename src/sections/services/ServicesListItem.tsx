@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
-import styled, {css} from "styled-components";
-import {Icon} from "./Icon";
-import {Button} from "./Button";
+import styled from "styled-components";
+import {Icon} from "../../components/Icon";
+import {Button} from "../../components/Button";
 
 type TProps = {
     title: string
@@ -16,7 +16,7 @@ export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
             <h3>{title}</h3>
             <p>{subtitle}</p>
             {!iconId && (
-                <Button variant={"text"}>
+                <Button variant={"text"} as={"a"} href={"#"} fontSizePx={12} fontWeight={700} gapPx={1}>
                     ORDER NOW
                     <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>
@@ -30,37 +30,19 @@ type WrapperProps = {
 }
 
 const Wrapper = styled.li<WrapperProps>`
-  height: 225px;
-  width: 310px;
+  min-height: 225px;
+  max-width: 310px;
+  width: 100%;
+  padding: 30px 25px 20px 25px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px;
-
-
-  & h3 {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 123.6%; /* 22.248px */
-    text-transform: capitalize;
-    ${(props) => props.iconId && css<WrapperProps>`
-      margin-top: 25px;
-    `}
-
-    ${(props) => !props.iconId && css<WrapperProps>`
-      margin-top: 5px;
-    `}
+  justify-content: center;
+  gap: 18px;
+  
+  p {
+    text-align: center;
   }
-
-  & p {
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px; /* 160% */
-    text-transform: capitalize;
-    color: ${({theme}) => theme.colors.textSecondary};
-  }
-`
+`;
 

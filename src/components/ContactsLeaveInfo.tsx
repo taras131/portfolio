@@ -42,7 +42,7 @@ export const ContactsLeaveInfo = () => {
                            value={inputValues.message}
                            onChange={handleChange}/>
                 </div>
-                <Button variant={"contained"} borderRadius={"0px"}>
+                <Button variant={"contained"} borderRadiusPx={0} >
                     <span>send message</span>
                 </Button>
             </Form>

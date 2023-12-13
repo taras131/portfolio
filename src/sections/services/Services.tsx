@@ -1,9 +1,9 @@
 import React from 'react';
-import {TemplateSection} from "./TemplateSection";
-import {servicesTitle, servicesDescription, services} from "../utils/consts";
-import {ServicesList} from "../components/ServicesList";
+import {TemplateSection} from "../TemplateSection";
+import {servicesTitle, servicesDescription, services} from "../../utils/consts";
+import {ServicesList} from "./ServicesList";
 
-export const ServicesSection = () => {
+export const Services = () => {
     return (
         <TemplateSection sectionTitle={servicesTitle}
                          sectionDescription={servicesDescription}>

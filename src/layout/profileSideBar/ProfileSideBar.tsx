@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
-import {ProfileMain} from "../components/ProfileMain";
-import {myProfile, spriteIds} from "../utils/consts";
-import {ProfileParametersList} from "../components/ProfileParametersList";
-import {ProfileSkills} from "../components/ProfileSkills";
-import {ProfileExtraSkills} from "../components/ProfileExtraSkills";
-import {Button} from "../components/Button";
-import {Icon} from "../components/Icon";
+import {ProfileMain} from "../../components/ProfileMain";
+import {myProfile, spriteIds} from "../../utils/consts";
+import {ProfileParametersList} from "../../components/ProfileParametersList";
+import {ProfileSkills} from "../../components/ProfileSkills";
+import {ProfileExtraSkills} from "../../components/ProfileExtraSkills";
+import {Button} from "../../components/Button";
+import {Icon} from "../../components/Icon";
 
-export const Profile = () => {
+export const ProfileSideBar = () => {
     return (
         <Wrapper>
             <ProfileMain profileMain={myProfile.main}/>
@@ -16,7 +16,7 @@ export const Profile = () => {
             <ProfileSkills skills={myProfile.languages}/>
             <ProfileSkills skills={myProfile.skills}/>
             <ProfileExtraSkills extraSkills={myProfile.extraSkills}/>
-            <Button variant={"contained"} borderRadius={"0px"}>
+            <Button variant={"contained"} borderRadiusPx={0}>
                 Download cv
                 <Icon iconId={spriteIds.download} width={14} height={16}/>
             </Button>

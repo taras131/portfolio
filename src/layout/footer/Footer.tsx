@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {Icon} from "../components/Icon";
-import {spriteIds} from "../utils/consts";
+import {Icon} from "../../components/Icon";
+import {spriteIds} from "../../utils/consts";
 
 export const Footer = () => {
     return (

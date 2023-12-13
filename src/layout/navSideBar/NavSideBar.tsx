@@ -1,15 +1,15 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {Icon} from "../components/Icon";
-import {navigation, spriteIds} from "../utils/consts";
-import {NavigationItem} from "../components/NavigationItem";
+import {Icon} from "../../components/Icon";
+import {navigation, spriteIds} from "../../utils/consts";
+import {NavigationItem} from "../../components/NavigationItem";
 
 type TProps = {
     activeId: number
     handleActiveChange: (id: number) => () => void
 }
 
-export const Navigation: FC<TProps> = ({activeId, handleActiveChange}) => {
+export const NavSideBar: FC<TProps> = ({activeId, handleActiveChange}) => {
     const navList = navigation.map(navItem => (<NavigationItem key={navItem.id}
                                                                iconId={navItem.iconId}
                                                                title={navItem.title}

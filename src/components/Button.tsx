@@ -1,84 +1,50 @@
-import React, {FC} from 'react';
 import styled, {css} from "styled-components";
 
-type TProps = {
-    children: React.ReactNode,
-    variant?: "outlined" | "contained" | "text",
-    borderRadius?: string,
-    type?: string
-    fontSize?: number
-    height?: string
-    fontWeight?: number
-}
-
-export const Button: FC<TProps> = ({
-                                       children,
-                                       variant = "outlined",
-                                       borderRadius = "30px",
-                                       type,
-                                       fontSize = 14,
-                                       height,
-                                       fontWeight = 700
-                                   }) => {
-    return (
-        <Wrapper variant={variant}
-                 borderRadius={borderRadius}
-                 fontSize={fontSize}
-                 height={height}
-                 fontWeight={fontWeight}>
-            {children}
-        </Wrapper>
-    );
-};
-
-type TWrapper = {
+type TButton = {
     variant: "outlined" | "contained" | "text",
-    borderRadius: string,
-    fontSize: number,
-    height?: string
-    fontWeight: number
+    borderRadiusPx?: number,
+    fontSizePx?: number,
+    heightPx?: number,
+    fontWeight?: number,
+    gapPx?: number,
 }
 
-const Wrapper = styled.button<TWrapper>`
-  border-radius: ${props => props.borderRadius};
-  font-size: ${props => props.fontSize + "px"};
-  font-weight: ${props => props.fontWeight};
+export const Button = styled.button<TButton>`
+  border-radius: ${props => props.borderRadiusPx ? `${props.borderRadiusPx}px` : "30px"};
+  font-size: ${props => props.fontSizePx ? `${props.fontSizePx}px` : "14px"};
+  font-weight: ${props => props.fontWeight ? props.fontWeight : 400};
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: ${props => props.gapPx ? `${props.gapPx}px` : "10px"};
   transition: all 0.3s;
 
 
-  ${props => props.variant === "outlined" && css<TWrapper>`
+  ${props => props.variant === "outlined" && css<TButton>`
     background-color: ${({theme}) => theme.colors.backgroundColor};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
 
     &:hover {
-      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
     }
   `}
-  ${props => props.variant === "contained" && css<TWrapper>`
+  ${props => props.variant === "contained" && css<TButton>`
     background: ${({theme}) => theme.colors.primary};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
 
     &:hover {
-      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
     }
   `}
-  ${props => props.variant === "text" && css<TWrapper>`
+  ${props => props.variant === "text" && css<TButton>`
     color: ${({theme}) => theme.colors.primary};
   `}
-  ${props => props.height && css<TWrapper>`
-    height: ${(props) => props.height};
+  ${props => props.heightPx && css<TButton>`
+    height: ${(props) => `${props.heightPx}px`};
   `}
-  & svg {
-    margin-left: 10px;
-  }
-
-
 `

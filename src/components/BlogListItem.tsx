@@ -15,7 +15,7 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
             <div>
                 <h3>{blog.title}</h3>
                 <p>{blog.text}</p>
-                <Button variant={"text"} fontSize={18} fontWeight={500}>
+                <Button variant={"text"} fontSizePx={18} fontWeight={500}>
                     <span>Learn more</span>
                     <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>
