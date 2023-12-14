@@ -152,6 +152,30 @@ export const recommendations: TRecommendation [] = [
             imgPath: avatar_3
         }
     },
+    {
+        id: 1,
+        rating: 5,
+        title: "I Love You!",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....",
+        author: {
+            name: "Tiana Philips",
+            role: "Photographer",
+            imgPath: avatar_2
+        }
+    },
+    {
+        id: 2,
+        rating: 4,
+        title: "Like!",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
+            " Vitae nulla diam in ac dictum a urna viverra morbi. Morbi donec amet....",
+        author: {
+            name: "Taras Zverev",
+            role: "Business man",
+            imgPath: avatar_3
+        }
+    },
 ]
 export const educationTitle = "Education";
 export const educationDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit" +
@@ -237,39 +261,48 @@ export const portfolioDescription = "Amet minim mollit non deserunt ullamco est 
 export const portfolioWorks: TPortfolio [] = [
     {
         id: 0,
-        imgPath: portfolio_1
+        imgPath: portfolio_1,
+        categoryId: 1
     },
     {
         id: 1,
-        imgPath: portfolio_2
+        imgPath: portfolio_2,
+        categoryId: 3
     },
     {
         id: 2,
-        imgPath: portfolio_3
+        imgPath: portfolio_3,
+        categoryId: 2
     },
     {
         id: 3,
-        imgPath: portfolio_4
+        imgPath: portfolio_4,
+        categoryId: 2
     },
     {
         id: 4,
-        imgPath: portfolio_5
+        imgPath: portfolio_5,
+        categoryId: 3
     },
     {
         id: 5,
-        imgPath: portfolio_6
+        imgPath: portfolio_6,
+        categoryId: 4
     },
     {
         id: 6,
-        imgPath: portfolio_7
+        imgPath: portfolio_7,
+        categoryId: 3
     },
     {
         id: 7,
-        imgPath: portfolio_8
+        imgPath: portfolio_8,
+        categoryId: 4
     },
     {
         id: 8,
-        imgPath: portfolio_9
+        imgPath: portfolio_9,
+        categoryId: 3
     },
 ]
 export const portfolioCategories: TPortfolioCategory [] = [
@@ -289,21 +322,22 @@ export const blogs: TBlog[] = [
         title: "How to make web tempates",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
             " Vitae nulla diam in ac dictum a urna ",
-        imgPath: portfolio_9
+        imgPath: portfolio_9,
+
     },
     {
         id: 1,
         title: "make Business card",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
             " Vitae nulla diam in ac dictum a urna ",
-        imgPath: portfolio_2
+        imgPath: portfolio_2,
     },
     {
         id: 2,
         title: "How to make Flyer Design",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
             " Vitae nulla diam in ac dictum a urna ",
-        imgPath: portfolio_4
+        imgPath: portfolio_4,
     },
 ]
 //contacts

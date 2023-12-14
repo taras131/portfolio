@@ -41,6 +41,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     text-transform: capitalize;
   }
+  
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
 
   p {
     font-size: 15px;

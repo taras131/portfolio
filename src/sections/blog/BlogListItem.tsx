@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {TBlog} from "../models/TBlog";
-import {Button} from "./Button";
-import {Icon} from "./Icon";
+import {TBlog} from "../../models/TBlog";
+import {Button} from "../../components/Button";
+import {Icon} from "../../components/Icon";
 
 type TProps = {
     blog: TBlog
@@ -15,8 +15,13 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
             <div>
                 <h3>{blog.title}</h3>
                 <p>{blog.text}</p>
-                <Button variant={"text"} fontSizePx={18} fontWeight={500}>
-                    <span>Learn more</span>
+                <Button variant={"text"}
+                        fontSizePx={18}
+                        fontWeight={500}
+                        gapPx={1}
+                        as={"a"}
+                        href={"#"}>
+                    Learn more
                     <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>
             </div>
@@ -25,36 +30,28 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
 };
 
 const Wrapper = styled.li`
-  width: 310px;
-  height: 474px;
+  max-width: 310px;
+  width: 100%;
+  min-height: 474px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 
-  & img {
+  img {
+    height: 300px;
     width: 100%;
     object-fit: cover;
-    min-height: 300px;
   }
 
-  & div {
+  div {
     padding: 25px 25px 18px 25px;
 
-    & h3 {
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 123.6%; /* 22.248px */
-      text-transform: capitalize;
-    }
-
-    & p {
+    p {
       margin-top: 8px;
       margin-bottom: 9px;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 24px; /* 160% */
-      text-transform: capitalize;
-      color: ${({theme}) => theme.colors.black.secondary}
+    }
+
+    a {
+      width: 120px;
     }
   }
 `

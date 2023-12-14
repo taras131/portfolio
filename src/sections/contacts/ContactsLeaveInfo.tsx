@@ -1,7 +1,7 @@
 import React, {useId, useState} from 'react';
 import styled from "styled-components";
-import {Input} from "./Input";
-import {Button} from "./Button";
+import {Input} from "../../components/Input";
+import {Button} from "../../components/Button";
 
 export const ContactsLeaveInfo = () => {
     const nameId = useId();
@@ -18,7 +18,7 @@ export const ContactsLeaveInfo = () => {
         setInputValues(prev => ({...prev, [e.target.name]: e.target.value}))
     }
     return (
-        <Wrapper>
+        <div>
             <h2>Leave us your info</h2>
             <Form>
                 <div>
@@ -42,53 +42,44 @@ export const ContactsLeaveInfo = () => {
                            value={inputValues.message}
                            onChange={handleChange}/>
                 </div>
-                <Button variant={"contained"} borderRadiusPx={0} >
-                    <span>send message</span>
+                <Button variant={"contained"}
+                        borderRadiusPx={1}
+                        fontSizePx={14}
+                        fontWeight={600}
+                        type={"submit"}>
+                    SEND MESSAGE
                 </Button>
             </Form>
-        </Wrapper>
+        </div>
     );
 };
 
-const Wrapper = styled.div`
 
-`
 const Form = styled.form`
   margin-top: 50px;
   min-height: 665px;
   padding: 25px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 
-  & span {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-
-  & div {
+  div {
     padding-bottom: 25px;
 
-    & label {
+    label {
       font-size: 18px;
-      font-style: normal;
       font-weight: 500;
-      line-height: 123.6%; /* 22.248px */
       text-transform: capitalize;
       color: ${({theme}) => theme.colors.black.secondary};
     }
 
-    & input, textarea {
+    input, textarea {
       margin-top: 8px;
       font-size: 16px;
     }
 
-    & textarea {
+    textarea {
       height: 210px;
       padding: 12px;
-      resize:none;
-
+      resize: none;
       -webkit-appearance: textfield;
       -moz-appearance: textfield;
       appearance: textfield;

@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {TemplateSection} from "./TemplateSection";
-import {blogDescription, blogs, blogTitle} from "../utils/consts";
-import {BlogList} from "../components/BlogList";
+import {TemplateSection} from "../TemplateSection";
+import {blogDescription, blogs, blogTitle} from "../../utils/consts";
+import {BlogList} from "./BlogList";
 
-export const BlogSection: FC = () => {
+export const Blog: FC = () => {
     return (
         <TemplateSection sectionTitle={blogTitle}
                          sectionDescription={blogDescription}

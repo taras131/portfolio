@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TPortfolioCategory} from "../models/TPortfolio";
+import {TPortfolioCategory} from "../../models/TPortfolio";
 import styled, {css} from "styled-components";
 
 type TProps = {

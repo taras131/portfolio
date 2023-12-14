@@ -12,7 +12,11 @@ const ratings = [0, 1, 2, 3, 4]
 
 export const Rating: FC<TRatingProps> = ({rating}) => {
     const ratingStarsList = ratings.map((item,index) => (
-        <Icon key={item.toString()} width={18} height={18} isActive={rating > index} iconId={spriteIds.star}/>
+        <Icon key={item}
+              width={18}
+              height={18}
+              isActive={rating > index}
+              iconId={spriteIds.star}/>
     ))
     return (
         <Wrapper>

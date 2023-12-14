@@ -2,12 +2,12 @@ import React, {FC, LegacyRef} from 'react';
 import {Services} from "../../sections/services/Services";
 import styled from "styled-components";
 import {PricePlans} from "../../sections/pricePlans/PricePlans";
-import {RecommendationsSection} from "../../sections/RecommendationsSection";
-import {EducationSection} from "../../sections/EducationSection";
-import {WorkSection} from "../../sections/WorkSection";
-import {PortfolioSection} from "../../sections/PortfolioSection";
-import {BlogSection} from "../../sections/BlogSection";
-import {ContactsSection} from "../../sections/ContactsSection";
+import {Recommendations} from "../../sections/recommendations/Recommendations";
+import {HistoryEducation} from "../../sections/historyEducation/HistoryEducation";
+import {HistoryWork} from "../../sections/historyWork/HistoryWork";
+import {Portfolio} from "../../sections/portfolio/Portfolio";
+import {Blog} from "../../sections/blog/Blog";
+import {Contacts} from "../../sections/contacts/Contacts";
 import {ClientsSection} from "../../sections/ClientsSection";
 import {Footer} from "../footer/Footer";
 import {Header} from "../header/Header";
@@ -30,16 +30,16 @@ export const Main: FC<TProps> = ({refs}) => {
             <Services/>
             <div ref={refs.priceRef}></div>
             <PricePlans/>
-            <RecommendationsSection/>
+            <Recommendations/>
             <div ref={refs.educationRef}></div>
-            <EducationSection/>
-            <WorkSection/>
+            <HistoryEducation/>
+            <HistoryWork/>
             <div ref={refs.portfolioRef}></div>
-            <PortfolioSection/>
+            <Portfolio/>
             <div ref={refs.blogRef}></div>
-            <BlogSection/>
+            <Blog/>
             <div ref={refs.contactsRef}></div>
-            <ContactsSection/>
+            <Contacts/>
             <ClientsSection/>
             <Footer/>
         </Wrapper>

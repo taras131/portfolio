@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {TPortfolio} from "../models/TPortfolio";
+import {TPortfolio} from "../../models/TPortfolio";
 import styled from "styled-components";
-import {Icon} from "./Icon";
-import {spriteIds} from "../utils/consts";
+import {Icon} from "../../components/Icon";
+import {spriteIds} from "../../utils/consts";
 
 type TProps = {
     portfolioWork: TPortfolio;
@@ -19,8 +19,9 @@ export const PortfolioListItem: FC<TProps> = ({portfolioWork}) => {
 
 const Wrapper = styled.li`
   position: relative;
-
+  
   &:hover {
+
     &::before {
       content: "";
       position: absolute;
@@ -32,20 +33,22 @@ const Wrapper = styled.li`
       background-color: rgba(255, 180, 0, 0.95);
       z-index: 0;
       cursor: pointer;
+
     }
 
-    & svg {
+    svg {
       opacity: 1;
+      transition: .5s;
     }
   }
 
-  & img {
-    width: 310px;
+  img {
+    width: 100%;
     height: 300px;
     object-fit: cover;
   }
 
-  & svg {
+  svg {
     z-index: 1;
     position: absolute;
     left: 50%;

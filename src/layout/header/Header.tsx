@@ -43,6 +43,8 @@ const Wrapper = styled.header`
     font-weight: 700;
 
     span {
+      font-size: 48px;
+      font-weight: 700;
       color: ${({theme}) => theme.colors.accent};
     }
   }

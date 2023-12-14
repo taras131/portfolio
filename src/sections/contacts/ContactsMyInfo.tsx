@@ -1,19 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
-import {MyInfoList} from "./MyInfoList";
-import {myContacts} from "../utils/consts";
+import {MyInfoList} from "../../components/MyInfoList";
+import {myContacts} from "../../utils/consts";
 
 export const ContactsMyInfo = () => {
     return (
-        <Wrapper>
+        <div>
             <h2>Contact information</h2>
             <MyInfoList contacts={myContacts}/>
-        </Wrapper>
+        </div>
     );
 };
 
-const Wrapper = styled.div`
-
-`
 
 

@@ -1,8 +1,9 @@
 export type TPortfolio = {
     id: number,
-    imgPath: string
+    imgPath: string,
+    categoryId: number
 }
 export type TPortfolioCategory = {
     id: number,
-    title: string
+    title: string,
 }

@@ -27,6 +27,6 @@ const Wrapper = styled.ul`
     margin-bottom: 15px;
   }
   li:last-child {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 `

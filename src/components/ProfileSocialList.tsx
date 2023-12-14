@@ -1,6 +1,4 @@
 import React, {FC} from 'react';
-import {Icon} from "./Icon";
-import {spriteIds} from "../utils/consts";
 import styled from "styled-components";
 import {ProfileSocialListItem} from "./ProfileSocialListItem";
 

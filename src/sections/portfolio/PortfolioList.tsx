@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TPortfolio} from "../models/TPortfolio";
+import {TPortfolio} from "../../models/TPortfolio";
 import {PortfolioListItem} from "./PortfolioListItem";
 import styled from "styled-components";
 
@@ -18,9 +18,8 @@ export const PortfolioList: FC<TProps> = ({portfolioWorks}) => {
 };
 
 const Wrapper = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
 `
 

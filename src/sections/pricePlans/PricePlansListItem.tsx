@@ -22,7 +22,10 @@ export const PricePlansListItem: FC<TProps> = ({plan}) => {
                 <Description>{plan.description}</Description>
             </div>
             <AdvantagesList advantagesIdList={plan.advantagesIdList}/>
-            <Button variant={plan.isPopular ? "contained" : "outlined"} fontWeight={700}>
+            <Button variant={plan.isPopular ? "contained" : "outlined"}
+                    fontWeight={700}
+                    as={"a"}
+                    href={"#"}>
                 ORDER NOW
             </Button>
         </Wrapper>
@@ -34,7 +37,7 @@ const Wrapper = styled.li`
   width: 100%;
   min-height: 609px;
   background-color: ${({theme}) => theme.colors.backgroundPrimary};
-  padding: 55px 30px 25px 30px;
+  padding: 55px 30px 25px;
   position: relative;
   display: flex;
   flex-direction: column;

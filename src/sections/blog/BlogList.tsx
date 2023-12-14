@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TBlog} from "../models/TBlog";
+import {TBlog} from "../../models/TBlog";
 import styled from "styled-components";
 import {BlogListItem} from "./BlogListItem";
 
