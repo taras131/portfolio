@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TemplateSection} from "../TemplateSection";
+import {TemplateSection} from "../../components/TemplateSection";
 import {blogDescription, blogs, blogTitle} from "../../utils/consts";
 import {BlogList} from "./BlogList";
 

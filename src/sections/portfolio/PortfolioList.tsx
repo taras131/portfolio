@@ -18,8 +18,10 @@ export const PortfolioList: FC<TProps> = ({portfolioWorks}) => {
 };
 
 const Wrapper = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
 `
 

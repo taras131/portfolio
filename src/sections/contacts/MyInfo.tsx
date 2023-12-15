@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
-import {MyInfoList} from "../../components/MyInfoList";
+import {MyInfoList} from "./MyInfoList";
 import {myContacts} from "../../utils/consts";
 
-export const ContactsMyInfo = () => {
+export const MyInfo = () => {
     return (
         <div>
             <h2>Contact information</h2>

@@ -20,7 +20,7 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
                         fontWeight={500}
                         gapPx={1}
                         as={"a"}
-                        href={"#"}>
+                        href={"#contacts"}>
                     Learn more
                     <Icon iconId={"rightArrow"} height={20} width={20}/>
                 </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {TemplateSection} from "../TemplateSection";
+import {TemplateSection} from "../../components/TemplateSection";
 import {recommendations, recommendationsDescription, recommendationsTitle} from "../../utils/consts";
 import {RecommendationsList} from "./RecommendationsList";
 

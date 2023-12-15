@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 import {Icon} from "../../components/Icon";
 import {navigation, spriteIds} from "../../utils/consts";
-import {NavigationItem} from "../../components/NavigationItem";
+import {NavItem} from "./NavItem";
 
 type TProps = {
     activeId: number
@@ -10,11 +10,11 @@ type TProps = {
 }
 
 export const NavSideBar: FC<TProps> = ({activeId, handleActiveChange}) => {
-    const navList = navigation.map(navItem => (<NavigationItem key={navItem.id}
-                                                               iconId={navItem.iconId}
-                                                               title={navItem.title}
-                                                               isActive={activeId === navItem.id}
-                                                               handleClick={handleActiveChange(navItem.id)}/>))
+    const navList = navigation.map(navItem => (<NavItem key={navItem.id}
+                                                        iconId={navItem.iconId}
+                                                        title={navItem.title}
+                                                        isActive={activeId === navItem.id}
+                                                        handleClick={handleActiveChange(navItem.id)}/>))
     return (
         <Wrapper>
             <Icon iconId={spriteIds.contrast} width={30} height={30}/>
@@ -40,7 +40,7 @@ const Wrapper = styled.menu`
   top: 0;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
 
-  & ul {
+  ul {
     margin-top: 174px;
   }
 

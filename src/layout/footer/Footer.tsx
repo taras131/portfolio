@@ -20,13 +20,5 @@ const Wrapper = styled.footer`
   gap: 15px;
   height: 60px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
-
-  & p {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 160% */
-    text-transform: capitalize;
-  }
 `;
 

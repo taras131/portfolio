@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Input} from "../../components/Input";
 import {Button} from "../../components/Button";
 
-export const ContactsLeaveInfo = () => {
+export const LeaveInfo = () => {
     const nameId = useId();
     const emailId = useId();
     const subjectId = useId();

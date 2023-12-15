@@ -23,10 +23,8 @@ export const AdvantagesList: FC<TProps> = ({advantagesIdList}) => {
 
 const Wrapper = styled.ul`
   width: 100%;
-  li {
+
+  li:not(li:last-child) {
     margin-bottom: 15px;
-  }
-  li:last-child {
-    margin-bottom: 0;
   }
 `

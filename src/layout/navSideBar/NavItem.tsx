@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
-import {Icon} from "./Icon";
-import {spriteIds} from "../utils/consts";
+import {Icon} from "../../components/Icon";
+import {spriteIds} from "../../utils/consts";
 import styled, {css} from "styled-components";
+import {IconWrapper} from "../../components/IconWrapper";
 
 type TProps = {
     title: string,
@@ -10,7 +11,7 @@ type TProps = {
     handleClick: () => void
 }
 
-export const NavigationItem: FC<TProps> = ({
+export const NavItem: FC<TProps> = ({
                                                title,
                                                iconId,
                                                isActive,
@@ -20,11 +21,11 @@ export const NavigationItem: FC<TProps> = ({
         <Wrapper isActive={isActive}>
             <PopUp isActive={isActive}>
                 <Icon iconId={spriteIds.popUp} width={65} height={33}/>
-                <p>{title}</p>
+                <span>{title}</span>
             </PopUp>
-            <NavIconWrapper isActive={isActive} onClick={handleClick}>
+            <IconWrapper isActive={isActive} onClick={handleClick} as={"button"}>
                 <Icon iconId={iconId} height={18} width={18}/>
-            </NavIconWrapper>
+            </IconWrapper>
         </Wrapper>
     );
 };
@@ -57,7 +58,8 @@ const PopUp = styled.div<TStyledProps>`
   ${props => props.isActive && css<TStyledProps>`
     opacity: 1;
   `}
-  & p {
+  
+  span {
     position: absolute;
     top: 5px;
     left: 50%;
@@ -65,30 +67,6 @@ const PopUp = styled.div<TStyledProps>`
     color: ${({theme}) => theme.colors.sectionBackgroundColor};
     z-index: 100;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
   }
-`
-
-const NavIconWrapper = styled.div<TStyledProps>`
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({theme}) => theme.colors.primary};
-  }
-
-  ${props => props.isActive && css<TStyledProps>`
-    background-color: ${({theme}) => theme.colors.primary};
-  `}
-  ${props => !props.isActive && css<TStyledProps>`
-    background-color: ${({theme}) => theme.colors.backgroundColor};
-  `}
 `

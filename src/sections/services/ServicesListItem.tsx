@@ -31,8 +31,8 @@ type WrapperProps = {
 
 const Wrapper = styled.li<WrapperProps>`
   min-height: 225px;
-  max-width: 310px;
-  width: 100%;
+  width: 310px;
+  flex-grow: 1;
   padding: 30px 25px 20px 25px;
   background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
   display: flex;

@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import {Main} from "../layout/main/Main";
 import {NavSideBar} from "../layout/navSideBar/NavSideBar";
-import {ProfileSideBar} from "../layout/profileSideBar/ProfileSideBar";
+import {Profile} from "../layout/profileSideBar/Profile";
 import React, {useEffect, useRef, useState} from "react";
 import {navigation} from "../utils/consts";
+import {Container} from "./Container";
+import {Header} from "../layout/header/Header";
+import {Footer} from "../layout/footer/Footer";
 
 
 export function App() {
@@ -86,8 +89,12 @@ export function App() {
     return (
         <Wrapper>
             <ContentWrapper>
-                <ProfileSideBar/>
-                <Main refs={{homeRef, portfolioRef, contactsRef, blogRef, educationRef, priceRef}}/>
+                <Profile/>
+                <Container ref={homeRef}>
+                    <Header />
+                    <Main refs={{portfolioRef, contactsRef, blogRef, educationRef, priceRef}}/>
+                    <Footer/>
+                </Container>
                 <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}/>
             </ContentWrapper>
         </Wrapper>

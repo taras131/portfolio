@@ -1,14 +1,16 @@
-import React, {FC} from 'react';
+import React, {FC, LegacyRef} from 'react';
 import {Button} from "../../components/Button";
 import {Icon} from "../../components/Icon";
 import styled from "styled-components";
 import myPhoto from "../../assets/images/my_photo.png";
 import backgroundImage from "../../assets/images/headerBackground.png";
 import {spriteIds} from "../../utils/consts";
+import {Burger} from "./Burger";
 
 export const Header: FC = () => {
     return (
         <Wrapper>
+            <Burger/>
             <MyName>I’m Taras Zverev</MyName>
             <h1><span> Front-end </span>Developer</h1>
             <p>
@@ -16,7 +18,7 @@ export const Header: FC = () => {
                 Natoque rutrum semper sed suspendisse nunc lectus.
             </p>
             <Button as={"a"}
-                    href={"#"}
+                    href={"#contacts"}
                     variant={"contained"}
                     borderRadiusPx={5}
                     fontSizePx={16}
@@ -30,7 +32,7 @@ export const Header: FC = () => {
     );
 };
 
-const Wrapper = styled.header`
+const Wrapper = styled.header` 
   margin-bottom: 70px;
   padding: 95px 60px 75px 60px;
   background-image: url(${backgroundImage});

@@ -14,7 +14,9 @@ export const HistoryListItem: FC<TProps> = ({historyItem}) => {
                 <h3>{historyItem.name}</h3>
                 <Role>
                     <span>{historyItem.role}</span>
-                    <TextInBox text={`${historyItem.dateStart} - ${historyItem.dateFinish}`}/>
+                    <TextInBox isWhite={true}>
+                        {`${historyItem.dateStart} - ${historyItem.dateFinish}`}
+                    </TextInBox>
                 </Role>
             </div>
             <Description>
@@ -31,7 +33,9 @@ const Wrapper = styled.li`
   display: flex;
   align-items: start;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 5px;
+  position: relative;
 `
 
 const Role = styled.div`
@@ -44,7 +48,7 @@ const Role = styled.div`
 const Description = styled.div`
   max-width: 536px;
   width: 100%;
-  
+
   p {
     margin-top: 28px;
   }

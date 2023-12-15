@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {Icon} from "./Icon";
-import {spriteIds} from "../utils/consts";
+import {Icon} from "../../components/Icon";
+import {spriteIds} from "../../utils/consts";
 
 type TProps = {
     extraSkills: string []

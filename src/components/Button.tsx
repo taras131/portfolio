@@ -36,6 +36,7 @@ export const Button = styled.button<TButton>`
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
+    text-transform: uppercase;
 
     &:hover {
       box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
@@ -47,4 +48,8 @@ export const Button = styled.button<TButton>`
   ${props => props.heightPx && css<TButton>`
     height: ${(props) => `${props.heightPx}px`};
   `}
+  &:active {
+    transform: translateY(2px);
+    color: inherit;
+  }
 `

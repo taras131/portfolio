@@ -19,7 +19,9 @@ export const PortfolioListItem: FC<TProps> = ({portfolioWork}) => {
 
 const Wrapper = styled.li`
   position: relative;
-  
+  width: 310px;
+  flex-grow: 1;
+
   &:hover {
 
     &::before {

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TSkills} from "../models/TProfile";
+import {TSkills} from "../../models/TProfile";
 import styled from "styled-components";
 import {ProgressList} from "./ProgressList";
 

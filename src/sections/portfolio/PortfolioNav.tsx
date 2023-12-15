@@ -33,8 +33,9 @@ const Wrapper = styled.nav`
   ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 37px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 `
 

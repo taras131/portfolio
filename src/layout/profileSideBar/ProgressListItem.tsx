@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
-import {TProgress} from "../models/TProfile";
+import {TProgress} from "../../models/TProfile";
 import styled from "styled-components";
-import {NameWithValue} from "./NameWithValue";
+import {NameWithValue} from "../../components/NameWithValue";
 import {ProgressLine} from "./ProgressLine";
 
 type TProps = {

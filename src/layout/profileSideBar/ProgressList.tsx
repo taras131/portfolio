@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {TProgress} from "../models/TProfile";
+import {TProgress} from "../../models/TProfile";
 import styled from "styled-components";
 import {ProgressListItem} from "./ProgressListItem";
 

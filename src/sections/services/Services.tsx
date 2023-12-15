@@ -1,5 +1,5 @@
 import React from 'react';
-import {TemplateSection} from "../TemplateSection";
+import {TemplateSection} from "../../components/TemplateSection";
 import {servicesTitle, servicesDescription, services} from "../../utils/consts";
 import {ServicesList} from "./ServicesList";
 

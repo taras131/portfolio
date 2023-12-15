@@ -1,5 +1,5 @@
 import React from 'react';
-import {TemplateSection} from "../TemplateSection";
+import {TemplateSection} from "../../components/TemplateSection";
 import {plansTitle, plansDescription, plans} from "../../utils/consts";
 import {PricePlansList} from "./PricePlansList";
 

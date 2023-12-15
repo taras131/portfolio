@@ -26,9 +26,7 @@ type TWrapperProps = {
 
 const Wrapper = styled.li<TWrapperProps>`
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 123.6%; /* 22.248px */
   text-transform: capitalize;
   cursor: pointer;
   ${props => props.isActive && css<TWrapperProps>`
