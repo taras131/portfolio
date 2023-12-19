@@ -6,7 +6,7 @@ export const Input = styled.input`
   flex-shrink: 0;
   border: none;
   padding-left: 12px;
-  background-color: ${({theme}) => theme.colors.backgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundSecondary};
   &:focus {
     outline: 2px solid ${({theme}) => theme.colors.accent};
   }

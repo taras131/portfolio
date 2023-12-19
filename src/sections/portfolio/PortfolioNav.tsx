@@ -26,16 +26,16 @@ export const PortfolioNav: FC<TProps> = ({categories, activeCategoryId, handleCa
     );
 };
 
-const Wrapper = styled.nav`
+const Wrapper = styled.menu`
   margin: 0 auto;
   padding-bottom: 50px;
 
   ul {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
   }
 `
 

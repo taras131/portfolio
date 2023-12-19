@@ -8,12 +8,21 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: unset;
+    }
+  }
+
+  *:focus-visible {
+    outline: 2px solid ${theme.colors.accent};
   }
 
   body {
     font-family: 'Inter', sans-serif;
     color: ${theme.colors.textPrimary};
     line-height: 1.2;
+    min-width: 360px;
   }
 
   button {
@@ -41,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     text-transform: capitalize;
   }
-  
+
   h4 {
     font-size: 18px;
     font-weight: 500;

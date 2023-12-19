@@ -29,7 +29,8 @@ const Wrapper = styled.li<TWrapperProps>`
   font-weight: 500;
   text-transform: capitalize;
   cursor: pointer;
+  
   ${props => props.isActive && css<TWrapperProps>`
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.accent};
   `}
 `

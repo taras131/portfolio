@@ -19,7 +19,7 @@ export const NavSideBar: FC<TProps> = ({activeId, handleActiveChange}) => {
         <Wrapper>
             <Icon iconId={spriteIds.contrast} width={30} height={30}/>
             <nav>
-                <ul>
+                <ul aria-label="Меню">
                     {navList}
                 </ul>
             </nav>
@@ -38,12 +38,15 @@ const Wrapper = styled.menu`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
 
   ul {
     margin-top: 174px;
   }
 
+  @media ${({theme}) => theme.media.mobile} {
+    display: none;
+  }
 `
 
 

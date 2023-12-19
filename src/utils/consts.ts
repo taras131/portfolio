@@ -5,15 +5,15 @@ import avatar_1 from "../assets/images/recomendation_photo_1.jpg";
 import avatar_2 from "../assets/images/recomendation_photo_2.jpg";
 import avatar_3 from "../assets/images/recomendation_photo_3.jpg";
 import portfolio_1 from "../assets/images/portfolio_1.png";
-import portfolio_2 from "../assets/images/portfolio_2.png";
-import portfolio_3 from "../assets/images/portfolio_3.png";
+import portfolio_2 from "../assets/images/portfolio_2.jpg";
+import portfolio_3 from "../assets/images/portfolio_3.jpg";
 import portfolio_4 from "../assets/images/portfolio_4.png";
-import portfolio_5 from "../assets/images/portfolio_5.png";
-import portfolio_6 from "../assets/images/portfolio_6.png";
-import portfolio_7 from "../assets/images/portfolio_7.png";
-import portfolio_8 from "../assets/images/portfolio_8.png";
+import portfolio_5 from "../assets/images/portfolio_5.jpg";
+import portfolio_6 from "../assets/images/portfolio_6.jpg";
+import portfolio_7 from "../assets/images/portfolio_7.webp";
+import portfolio_8 from "../assets/images/portfolio_8.webp";
 import portfolio_9 from "../assets/images/portfolio_9.png";
-import myPhoto from "../assets/images/my_photo.png";
+import myPhoto from "../assets/images/my_photo.webp";
 import {THistory} from "../models/THistory";
 import {TPortfolio, TPortfolioCategory} from "../models/TPortfolio";
 import {TBlog} from "../models/TBlog";
@@ -53,7 +53,7 @@ export const spriteIds = {
     mobile: "mobile",
     close: "close"
 }
-
+//services
 export const servicesTitle = "My Services";
 export const servicesDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia " +
     "consequat duis enim velit mollit. lorem ipsum"
@@ -177,6 +177,7 @@ export const recommendations: TRecommendation [] = [
         }
     },
 ]
+//education
 export const educationTitle = "Education";
 export const educationDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit" +
     " officia consequat duis enim velit mollit. lorem ipsum";
@@ -215,7 +216,7 @@ export const educationHistory: THistory [] = [
         dateFinish: "Dec 2021"
     },
 ]
-
+//work
 export const workTitle = "Work History";
 export const workDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit" +
     " officia consequat duis enim velit mollit. lorem ipsum";
@@ -254,7 +255,7 @@ export const workHistory: THistory [] = [
         dateFinish: "Dec 2021"
     },
 ]
-
+// portfolio
 export const portfolioTitle = "Portfolio";
 export const portfolioDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
     "Velit officia consequat duis enim velit mollit. lorem ipsum";
@@ -312,7 +313,7 @@ export const portfolioCategories: TPortfolioCategory [] = [
     {id: 3, title: "Logo"},
     {id: 4, title: "Branding"},
 ]
-
+// blog
 export const blogTitle = "Blog";
 export const blogDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. " +
     "Velit officia consequat duis enim velit mollit. lorem ipsum";
@@ -340,7 +341,7 @@ export const blogs: TBlog[] = [
         imgPath: portfolio_4,
     },
 ]
-//contacts
+// contacts
 export const myContacts: TContact [] = [
     {
         id: 0,
@@ -370,7 +371,7 @@ export const myContacts: TContact [] = [
         ]
     },
 ]
-
+// clients
 export const clients = [
     {id: 0, iconId: spriteIds.petroleum},
     {id: 1, iconId: spriteIds.filling},
@@ -383,8 +384,14 @@ export const myProfile: TProfile = {
         myPhotoPath: myPhoto,
         name: "Rayan Adlardard",
         role: "Font-end Developer",
-        social: [spriteIds.facebook, spriteIds.instagram, spriteIds.twitter, spriteIds.linkedIn,
-            spriteIds.youtube, spriteIds.dribble],
+        social: [
+            {id: 0, iconId: spriteIds.facebook, title: "facebook"},
+            {id: 1, iconId: spriteIds.instagram, title: "instagram"},
+            {id: 2, iconId: spriteIds.twitter, title: "twitter"},
+            {id: 3, iconId: spriteIds.linkedIn, title: "linkedIn"},
+            {id: 4, iconId: spriteIds.youtube, title: "youtube"},
+            {id: 5, iconId: spriteIds.dribble, title: "dribble"},
+  ],
     },
     parameters: [
         {id: 0, name: "age:", value: "24"},

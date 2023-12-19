@@ -20,17 +20,19 @@ export const Clients = () => {
 
 const Wrapper = styled.section`
   margin-top: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+ 
+
   ul {
-    width: 100%;
+ 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-grow: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      width: 140px;
+    }
 
     li:hover {
       transition: 0.5s;

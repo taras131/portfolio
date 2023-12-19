@@ -23,7 +23,7 @@ const Wrapper = styled.li`
   max-width: 310px;
   width: 100%;
   min-height: 323px;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
   padding: 25px;
 
   h3 {

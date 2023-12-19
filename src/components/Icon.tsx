@@ -29,6 +29,6 @@ type TStyledProps = {
 
 const SVG = styled.svg<TStyledProps>`
   ${props => props.isActive && css<TStyledProps>`
-    fill: ${props => props.theme.colors.primary};
+    fill: ${props => props.theme.colors.accent};
   `}
 `

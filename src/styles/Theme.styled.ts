@@ -1,20 +1,15 @@
 export const theme = {
     colors: {
-        primary: "#FFB400",
-        secondary: "rgba(255, 180, 0, 0.95))",
-        backgroundColor: "#F0F0F6",
-        sectionBackgroundColor: "#FFF",
-        black: {
-            primary: "#2B2B2B",
-            secondary: "#767676"
-        },
-
-        accent : "#FFB400",
-
+        accent: "#FFB400",
         textPrimary: "#2B2B2B",
         textSecondary: "#767676",
-
         backgroundPrimary: "#FFFFFF",
         backgroundSecondary: "#F0F0F6",
+    },
+    media: {
+
+        laptop: "screen and (max-width: 990px)",
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)",
     }
 }

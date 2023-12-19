@@ -21,20 +21,17 @@ const Wrapper = styled.div`
   position: relative;
   padding-bottom: 25px;
 
-  & h2 {
+  h2 {
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 123.6%; /* 22.248px */
-    text-transform: capitalize;
   }
   
-  &:after {
+  &::after {
     content: "";
     display: block;
     width: 100%;
     height: 1.5px;
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundSecondary};
     position: absolute;
     bottom: 0;
   }

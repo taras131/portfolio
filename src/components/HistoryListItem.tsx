@@ -10,15 +10,15 @@ type TProps = {
 export const HistoryListItem: FC<TProps> = ({historyItem}) => {
     return (
         <Wrapper>
-            <div>
+            <HistoryHeader>
                 <h3>{historyItem.name}</h3>
-                <Role>
+                <RoleAndDate>
                     <span>{historyItem.role}</span>
                     <TextInBox isWhite={true}>
                         {`${historyItem.dateStart} - ${historyItem.dateFinish}`}
                     </TextInBox>
-                </Role>
-            </div>
+                </RoleAndDate>
+            </HistoryHeader>
             <Description>
                 <h4>{historyItem.discipline}</h4>
                 <p>{historyItem.description}</p>
@@ -31,25 +31,48 @@ const Wrapper = styled.li`
   min-height: 208px;
   padding: 30px;
   display: flex;
-  align-items: start;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   position: relative;
+  
+  @media ${({theme}) => theme.media.mobile} {
+    flex-wrap: wrap;
+  }
 `
 
-const Role = styled.div`
+const HistoryHeader = styled.div`
+  flex-grow: 1;
+
+`;
+
+const RoleAndDate = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
   margin-top: 27px;
-`
+  flex-wrap: wrap;
+  @media ${({theme}) => theme.media.mobile} {
+    gap: 12px;
+  }
+`;
 
 const Description = styled.div`
   max-width: 536px;
   width: 100%;
+  flex-grow: 1;
 
   p {
     margin-top: 28px;
   }
+
+  @media ${({theme}) => theme.media.mobile} {
+    padding-top: 30px;
+    p {
+      margin-top: 10px;
+    }
+  }
 `
+
+
+

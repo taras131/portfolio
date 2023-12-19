@@ -31,10 +31,14 @@ export const MyInfoListItem: FC<TProps> = ({contact}) => {
 };
 
 const Wrapper = styled.li`
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
   margin-bottom: 20px;
   min-height: 210px;
   padding: 25px 25px 0 25px;
+  
+  div {
+    margin: 0 auto;
+  }
 `;
 
 const ContactItems = styled.ul`

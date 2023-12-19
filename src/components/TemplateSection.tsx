@@ -25,6 +25,7 @@ export const TemplateSection: FC<TProps> = ({
 
 const Wrapper = styled.section`
   padding-top: 70px;
+  width: 100%;
 `
 const SectionHeader = styled.div`
   max-width: 438px;

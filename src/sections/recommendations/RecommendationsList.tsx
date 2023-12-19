@@ -25,7 +25,7 @@ export const RecommendationsList: FC<TProps> = ({recommendations}) => {
 
     };
     return (
-        <Slider {...settings}>
+        <Slider {...settings} >
             {recommendationsList}
         </Slider>
     );

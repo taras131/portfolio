@@ -7,10 +7,12 @@ import {navigation} from "../utils/consts";
 import {Container} from "./Container";
 import {Header} from "../layout/header/Header";
 import {Footer} from "../layout/footer/Footer";
+import {Overlay} from "./Overlay";
 
 
 export function App() {
     const [activeId, setActiveId] = useState(navigation[0].id)
+    const [isShowProfile, setIsShowProfile] = useState(false)
     const homeRef = useRef<HTMLHeadingElement>(null);
     const portfolioRef = useRef<HTMLHeadingElement>(null);
     const contactsRef = useRef<HTMLHeadingElement>(null);
@@ -86,24 +88,28 @@ export function App() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    const toggleIsShowProfile = () => {
+        setIsShowProfile(prev => !prev)
+    }
     return (
         <Wrapper>
             <ContentWrapper>
-                <Profile/>
+                <Profile isShowProfile={isShowProfile} toggleIsShowProfile={toggleIsShowProfile}/>
                 <Container ref={homeRef}>
-                    <Header />
+                    <Header toggleIsShowProfile={toggleIsShowProfile}/>
                     <Main refs={{portfolioRef, contactsRef, blogRef, educationRef, priceRef}}/>
                     <Footer/>
                 </Container>
                 <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}/>
             </ContentWrapper>
+            <Overlay isShowProfile={isShowProfile}></Overlay>
         </Wrapper>
     );
 }
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  background-color: ${({theme}) => theme.colors.backgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundSecondary};
   width: 100%;
 `
 const ContentWrapper = styled.div`
@@ -111,5 +117,4 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: start;
-  gap: 20px;
 `

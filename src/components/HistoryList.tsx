@@ -18,7 +18,7 @@ export const HistoryList: FC<TProps> = ({history}) => {
 };
 
 const Wrapper = styled.ul`
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
 
   li:not(:last-child)::after {
     content: "";
@@ -28,6 +28,10 @@ const Wrapper = styled.ul`
     left: 40px;
     right: 40px;
     bottom: 0;
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundSecondary};
+    @media ${({theme}) => theme.media.mobile} {
+      left: 0;
+      right: 0;
+    }
   }
 `

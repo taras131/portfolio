@@ -14,15 +14,15 @@ export const IconWrapper = styled.div<TStyledProps>`
   width: ${props => props.sizePx ? `${props.sizePx}px` : "40px"};
   height: ${props => props.sizePx ? `${props.sizePx}px` : "40px"};
   cursor: pointer;
-
+  
   &:hover {
-    background-color: ${({theme}) => theme.colors.primary};
+    background-color: ${({theme}) => theme.colors.accent};
   }
 
   ${props => props.isActive && css<TStyledProps>`
-    background-color: ${({theme}) => theme.colors.primary};
+    background-color: ${({theme}) => theme.colors.accent};
   `}
   ${props => !props.isActive && css<TStyledProps>`
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundSecondary};
   `}
 `

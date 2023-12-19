@@ -19,6 +19,6 @@ const Wrapper = styled.footer`
   justify-content: center;
   gap: 15px;
   height: 60px;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
 `;
 

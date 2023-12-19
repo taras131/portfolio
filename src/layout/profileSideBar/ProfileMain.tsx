@@ -2,16 +2,17 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 import {SocialList} from "./SocialList";
 import {TProfileMain} from "../../models/TProfile";
+import backGroundPhoto from "../../assets/images/my_photo.webp";
 
 type TProps = {
     profileMain: TProfileMain
 }
 
-export const Main: FC<TProps> = ({profileMain}) => {
+export const ProfileMain: FC<TProps> = ({profileMain}) => {
     return (
         <Wrapper>
             <PhotoWrapper>
-                <img src={profileMain.myPhotoPath} alt="my photo"/>
+
             </PhotoWrapper>
             <span>{profileMain.name}</span>
             <h2>{profileMain.role}</h2>
@@ -44,16 +45,14 @@ const Wrapper = styled.div`
 const PhotoWrapper = styled.div`
   width: 150px;
   height: 150px;
-  overflow: hidden;
   border-radius: 150px;
   position: relative;
-  background-color: ${({theme}) => theme.colors.backgroundColor};
+  background-color: ${({theme}) => theme.colors.backgroundSecondary};
+  background-image: url(${backGroundPhoto});
+  background-position: top center;
+  background-size: cover;
 
-  img {
-    width: 100%;
-  }
-
-  span::after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -61,8 +60,8 @@ const PhotoWrapper = styled.div`
     height: 16px;
     border-radius: 100%;
     background-color: #7EB942;
-    right: 50%;
-    top: 50%;
+    right: 14px;
+    bottom: 14px;
   }
 `;
 

@@ -22,7 +22,7 @@ export const Button = styled.button<TButton>`
 
 
   ${props => props.variant === "outlined" && css<TButton>`
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundPrimary};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
@@ -32,7 +32,7 @@ export const Button = styled.button<TButton>`
     }
   `}
   ${props => props.variant === "contained" && css<TButton>`
-    background: ${({theme}) => theme.colors.primary};
+    background: ${({theme}) => theme.colors.accent};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
@@ -43,7 +43,7 @@ export const Button = styled.button<TButton>`
     }
   `}
   ${props => props.variant === "text" && css<TButton>`
-    color: ${({theme}) => theme.colors.primary};
+    color: ${({theme}) => theme.colors.accent};
   `}
   ${props => props.heightPx && css<TButton>`
     height: ${(props) => `${props.heightPx}px`};

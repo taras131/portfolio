@@ -30,10 +30,10 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
 };
 
 const Wrapper = styled.li`
-  max-width: 310px;
-  width: 100%;
+  width: 290px;
   min-height: 474px;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  flex-grow: 1;
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
 
   img {
     height: 300px;
@@ -47,7 +47,6 @@ const Wrapper = styled.li`
     p {
       margin-top: 8px;
       margin-bottom: 9px;
-      line-height: 24px; /* 160% */
     }
 
     a {

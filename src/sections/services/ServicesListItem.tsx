@@ -31,15 +31,15 @@ type WrapperProps = {
 
 const Wrapper = styled.li<WrapperProps>`
   min-height: 225px;
-  width: 310px;
+  width: 290px;
   flex-grow: 1;
-  padding: 30px 25px 20px 25px;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
+  padding: 30px 25px 20px; 
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
   
   p {
     text-align: center;

@@ -17,11 +17,17 @@ export type TParameter = {
     value: string
 }
 
+export type TSocial = {
+    id: number,
+    iconId: string,
+    title: string
+}
+
 export type TProfileMain = {
     myPhotoPath: string,
     name: string,
     role: string,
-    social: string [],
+    social: TSocial [],
 }
 
 export type TProfile = {

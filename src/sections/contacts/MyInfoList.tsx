@@ -20,5 +20,5 @@ export const MyInfoList: FC<TProps> = ({contacts}) => {
 const Wrapper = styled.ul`
   margin-top: 50px;
   min-height: 665px;
-  width: 370px;
+  
 `;

@@ -8,7 +8,7 @@ type TStyledProps = {
 
 export const TextInBox = styled.div<TStyledProps>`
   display: inline-block;
-  color: ${props => props.isWhite ? props.theme.colors.sectionBackgroundColor
+  color: ${props => props.isWhite ? props.theme.colors.backgroundPrimary
           : props.theme.colors.textPrimary};
   background-color: ${({theme}) => theme.colors.accent};
   font-size: ${props => props.fontSizePx ? `${props.fontSizePx}px` : "10px"};

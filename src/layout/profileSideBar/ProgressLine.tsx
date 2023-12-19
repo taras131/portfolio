@@ -18,13 +18,13 @@ const Wrapper = styled.span<TProps>`
   width: 100%;
   height: 4px;
   border-radius: 30px;
-  border: 0.5px solid ${({theme}) => theme.colors.primary};
+  border: 0.5px solid ${({theme}) => theme.colors.accent};
 
   &:after {
     display: block;
     content: "";
     height: 2px;
-    background-color: ${({theme}) => theme.colors.primary};
+    background-color: ${({theme}) => theme.colors.accent};
     width: ${props => props.percent}%;
   }
 `

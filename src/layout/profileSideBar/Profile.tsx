@@ -1,17 +1,32 @@
-import React from 'react';
+import React, {FC, useCallback, useEffect} from 'react';
 import styled from "styled-components";
-import {Main} from "./Main";
+import {ProfileMain} from "./ProfileMain";
 import {myProfile, spriteIds} from "../../utils/consts";
 import {ParametersList} from "./ParametersList";
 import {ProfileSkills} from "./ProfileSkills";
 import {ProfileExtraSkills} from "./ProfileExtraSkills";
 import {Button} from "../../components/Button";
 import {Icon} from "../../components/Icon";
+import {theme} from "../../styles/Theme.styled";
+import {Close} from "../../components/Close";
 
-export const Profile = () => {
+type TProps = {
+    isShowProfile: boolean,
+    toggleIsShowProfile: () => void
+}
+
+export const Profile: FC<TProps> = ({isShowProfile, toggleIsShowProfile}) => {
+    const onKeyDown = useCallback((e: KeyboardEvent) => {
+        if (e.key === 'Escape') toggleIsShowProfile()
+    }, [toggleIsShowProfile])
+    useEffect(() => {
+        document.addEventListener('keydown', onKeyDown)
+        return () => document.removeEventListener('keydown', onKeyDown)
+    }, [onKeyDown])
     return (
-        <Wrapper>
-            <Main profileMain={myProfile.main}/>
+        <Wrapper isShowProfile={isShowProfile}>
+            <Close handleClick={toggleIsShowProfile}/>
+            <ProfileMain profileMain={myProfile.main}/>
             <ParametersList parameters={myProfile.parameters}/>
             <ProfileSkills skills={myProfile.languages}/>
             <ProfileSkills skills={myProfile.skills}/>
@@ -24,7 +39,11 @@ export const Profile = () => {
     );
 };
 
-const Wrapper = styled.article`
+type TWrapper = {
+    isShowProfile: boolean,
+}
+
+const Wrapper = styled.article<TWrapper>`
   min-height: 100vh;
   max-width: 305px;
   width: 100%;
@@ -36,15 +55,22 @@ const Wrapper = styled.article`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: ${({theme}) => theme.colors.sectionBackgroundColor};
-  
-  & > div::after, ul::after  {
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
+  transition: 0.5s;
+  z-index: 999;
+
+  & > div::after, ul::after {
     content: "";
     display: block;
     width: 100%;
     height: 1.5px;
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundSecondary};
     position: absolute;
     bottom: 0;
+  }
+
+  @media ${theme.media.laptop} {
+    transform: ${props => props.isShowProfile ? "translateX(0)" : "translateX(-100%)"};
+    position: absolute;
   }
 `;

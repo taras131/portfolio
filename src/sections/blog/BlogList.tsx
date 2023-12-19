@@ -21,4 +21,5 @@ const Wrapper = styled.ul`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 20px
 `

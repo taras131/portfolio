@@ -24,7 +24,7 @@ export const Main: FC<TProps> = ({refs}) => {
             <Services/>
             <div ref={refs.priceRef}></div>
             <PricePlans/>
-            {/*    <Recommendations/>*/}
+            <Recommendations/>
             <div ref={refs.educationRef}></div>
             <HistoryEducation/>
             <HistoryWork/>

@@ -29,40 +29,28 @@ const Wrapper = styled.div`
   padding-bottom: 25px;
   position: relative;
 
-  & h2 {
+  h2 {
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 123.6%; /* 22.248px */
-    text-transform: capitalize;
   }
 
-  & ul {
+  ul {
     margin-top: 15px;
   }
 
-  & li {
+  li {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 5px;
   }
-
-  & p {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 160% */
-    text-transform: capitalize;
-    color: ${({theme}) => theme.colors.black.secondary}
-  }
-
+  
   &:after {
     content: "";
     display: block;
     width: 100%;
     height: 1.5px;
-    background-color: ${({theme}) => theme.colors.backgroundColor};
+    background-color: ${({theme}) => theme.colors.backgroundSecondary};
     position: absolute;
     bottom: 0;
   }

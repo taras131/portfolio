@@ -1,25 +1,35 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styled from "styled-components";
+import {theme} from "../../styles/Theme.styled";
 
-export const Burger = () => {
+type TProps = {
+    handleClick: () => void
+}
+
+export const Burger:FC<TProps> = ({handleClick}) => {
     return (
-        <Wrapper>
-
+        <Wrapper onClick={handleClick}>
+            <span></span>
         </Wrapper>
     );
 };
 
-const Wrapper = styled.div`
-  width: 30px;
-  height: 2px;
-  background-color: ${({theme}) => theme.colors.accent};
-  z-index: 900;
-  position: absolute;
-  right: 30px;
-  top: 30px;
+const Wrapper = styled.button`
   cursor: pointer;
+  display: none;
 
-  &::before {
+  span {
+    width: 30px;
+    height: 2px;
+    background-color: ${({theme}) => theme.colors.accent};
+    z-index: 900;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
+
+  span::before {
     content: "";
     display: block;
     width: 30px;
@@ -29,12 +39,16 @@ const Wrapper = styled.div`
     transform: translateY(-10px);
   }
 
-  &:after {
+  span:after {
     content: "";
     display: block;
     width: 30px;
     height: 2px;
     background-color: ${({theme}) => theme.colors.accent};
     transform: translateY(10px);
+  }
+
+  @media ${theme.media.laptop} {
+    display: block;
   }
 `;
