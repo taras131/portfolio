@@ -20,10 +20,10 @@ type TProps = {
 }
 export const Main: FC<TProps> = ({refs}) => {
     return (
-        <>
+        <main>
             <Services/>
             <div ref={refs.priceRef}></div>
-            <PricePlans/>
+            <PricePlans priceRef={refs.priceRef}/>
             <Recommendations/>
             <div ref={refs.educationRef}></div>
             <HistoryEducation/>
@@ -35,7 +35,7 @@ export const Main: FC<TProps> = ({refs}) => {
             <div ref={refs.contactsRef}></div>
             <Contacts/>
             <Clients/>
-        </>
+        </main>
     );
 };
 

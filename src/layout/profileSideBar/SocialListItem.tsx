@@ -53,12 +53,12 @@ const Tooltip = styled.div`
 
   span {
     position: absolute;
-    top: -10px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: ${({theme}) => theme.colors.backgroundPrimary};
     z-index: 100;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
   }
 `

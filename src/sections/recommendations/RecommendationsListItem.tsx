@@ -20,8 +20,7 @@ export const RecommendationsListItem: FC<TProps> = ({recommendation}) => {
 };
 
 const Wrapper = styled.li`
-  max-width: 310px;
-  width: 100%;
+  min-width: 310px;
   min-height: 323px;
   background-color: ${({theme}) => theme.colors.backgroundPrimary};
   padding: 25px;
@@ -29,12 +28,11 @@ const Wrapper = styled.li`
   h3 {
     margin-top: 15px;
   }
-  
+
   p {
     margin-top: 18px;
     margin-bottom: 30px;
   }
-  
 `;
 
 

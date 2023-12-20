@@ -6,7 +6,6 @@ type TStyledProps = {
 }
 
 export const IconWrapper = styled.div<TStyledProps>`
-  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;

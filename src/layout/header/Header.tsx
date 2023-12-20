@@ -5,16 +5,10 @@ import styled from "styled-components";
 import myPhoto from "../../assets/images/my_photo.webp";
 import backgroundImage from "../../assets/images/headerBackground.png";
 import {spriteIds} from "../../utils/consts";
-import {Burger} from "./Burger";
 
-type TProps = {
-    toggleIsShowProfile: () => void
-}
-
-export const Header: FC<TProps> = ({toggleIsShowProfile}) => {
+export const Header: FC = () => {
     return (
         <Wrapper>
-            <Burger handleClick={toggleIsShowProfile}/>
             <Info>
                 <MyName>I’m Taras Zverev</MyName>
                 <h1><span> Front-end </span>Developer</h1>
@@ -49,6 +43,7 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
   @media screen and (max-width: 1326px) {
     justify-content: center;
   }
@@ -100,7 +95,6 @@ const MyName = styled.span`
 `;
 
 const Photo = styled.img`
-
   width: 325px;
   height: 457px;
   object-fit: cover;

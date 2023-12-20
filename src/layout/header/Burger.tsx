@@ -3,29 +3,41 @@ import styled from "styled-components";
 import {theme} from "../../styles/Theme.styled";
 
 type TProps = {
+    isShowProfile: boolean
     handleClick: () => void
 }
 
-export const Burger:FC<TProps> = ({handleClick}) => {
+export const Burger: FC<TProps> = ({isShowProfile, handleClick}) => {
     return (
-        <Wrapper onClick={handleClick}>
+        <Wrapper onClick={handleClick} isShowProfile={isShowProfile}>
             <span></span>
         </Wrapper>
     );
 };
 
-const Wrapper = styled.button`
+type TWrapperProps = {
+    isShowProfile: boolean
+}
+
+const Wrapper = styled.button<TWrapperProps>`
   cursor: pointer;
   display: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 9999;
+
 
   span {
     width: 30px;
     height: 2px;
     background-color: ${({theme}) => theme.colors.accent};
     z-index: 900;
-    position: absolute;
-    left: 30px;
-    top: 30px;
+
   }
 
 
@@ -36,7 +48,7 @@ const Wrapper = styled.button`
     height: 2px;
     position: absolute;
     background-color: ${({theme}) => theme.colors.accent};
-    transform: translateY(-10px);
+    transform: translateY(-7px);
   }
 
   span:after {
@@ -45,10 +57,12 @@ const Wrapper = styled.button`
     width: 30px;
     height: 2px;
     background-color: ${({theme}) => theme.colors.accent};
-    transform: translateY(10px);
+    transform: translateY(7px);
   }
 
   @media ${theme.media.laptop} {
-    display: block;
+    display: ${props => props.isShowProfile ? "none" : "flex"};
+    align-items: center;
+    justify-content: center;
   }
 `;

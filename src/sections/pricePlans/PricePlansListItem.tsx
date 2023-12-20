@@ -52,6 +52,10 @@ const Wrapper = styled.li`
     font-size: 24px;
     font-weight: 600;
   }
+
+  @media ${({theme}) => theme.media.tablet} {
+    flex-shrink: 0;
+  }
 `
 
 const PopularLabel = styled.div`

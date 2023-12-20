@@ -30,11 +30,11 @@ export const BlogListItem: FC<TProps> = ({blog}) => {
 };
 
 const Wrapper = styled.li`
-  width: 290px;
+  width: 310px;
   min-height: 474px;
   flex-grow: 1;
   background-color: ${({theme}) => theme.colors.backgroundPrimary};
-
+  
   img {
     height: 300px;
     width: 100%;
@@ -52,6 +52,10 @@ const Wrapper = styled.li`
     a {
       width: 120px;
     }
+  }
+
+  @media ${({theme}) => theme.media.tablet} {
+    flex-shrink: 0;
   }
 `
 

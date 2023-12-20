@@ -1,19 +1,19 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef, LegacyRef} from 'react';
 import styled from "styled-components";
 
 type TProps = {
     sectionTitle: string,
     sectionDescription: string,
-    children: React.ReactNode
+    children: React.ReactNode,
 }
 
 export const TemplateSection: FC<TProps> = ({
                                                 sectionTitle,
                                                 sectionDescription,
-                                                children
+                                                children,
                                             }) => {
     return (
-        <Wrapper>
+        <Wrapper >
             <SectionHeader>
                 <h2>{sectionTitle}</h2>
                 <p>{sectionDescription}</p>
@@ -23,9 +23,10 @@ export const TemplateSection: FC<TProps> = ({
     );
 };
 
-const Wrapper = styled.section`
+const Wrapper = styled.section.attrs((props) => ({
+
+}))`
   padding-top: 70px;
-  width: 100%;
 `
 const SectionHeader = styled.div`
   max-width: 438px;

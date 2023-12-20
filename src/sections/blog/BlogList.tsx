@@ -21,5 +21,10 @@ const Wrapper = styled.ul`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px
+  gap: 20px;
+  
+  @media ${({theme}) => theme.media.tablet} {
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
 `

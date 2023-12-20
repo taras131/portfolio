@@ -13,8 +13,7 @@ export const ProgressLine: FC<TProps> = ({percent}) => {
     );
 };
 
-const Wrapper = styled.span<TProps>`
-  display: block;
+const Wrapper = styled.div<TProps>`
   width: 100%;
   height: 4px;
   border-radius: 30px;

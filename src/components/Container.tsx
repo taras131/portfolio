@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 970px;
-  width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
-
+  width: 970px;
+  @media screen and (max-width: 1440px) {
+    width: calc(100vw - 468px)
+  }
+  @media screen and (max-width: 990px) {
+    width: calc(100vw - 143px)
+  }
   @media ${({theme}) => theme.media.mobile} {
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 100vw;
   }
 `;
+

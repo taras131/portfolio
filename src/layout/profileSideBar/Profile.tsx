@@ -43,30 +43,25 @@ type TWrapper = {
     isShowProfile: boolean,
 }
 
-const Wrapper = styled.article<TWrapper>`
+const Wrapper = styled.aside<TWrapper>`
+  width: 305px;
+  position: -webkit-sticky;
+  position: sticky;
   min-height: 100vh;
-  max-width: 305px;
-  width: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
   padding: 40px 45px 25px 40px;
   display: flex;
   flex-direction: column;
-  gap: 21px;
   align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: ${({theme}) => theme.colors.backgroundPrimary};
+  gap: 20px;
   transition: 0.5s;
-  z-index: 999;
+  z-index: 2000;
 
-  & > div::after, ul::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1.5px;
-    background-color: ${({theme}) => theme.colors.backgroundSecondary};
-    position: absolute;
-    bottom: 0;
+  & > div, & > ul {
+    border-bottom: 1.5px solid ${({theme}) => theme.colors.backgroundSecondary};
   }
 
   @media ${theme.media.laptop} {

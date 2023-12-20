@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import {Main} from "../layout/main/Main";
 import {NavSideBar} from "../layout/navSideBar/NavSideBar";
 import {Profile} from "../layout/profileSideBar/Profile";
@@ -8,11 +8,15 @@ import {Container} from "./Container";
 import {Header} from "../layout/header/Header";
 import {Footer} from "../layout/footer/Footer";
 import {Overlay} from "./Overlay";
+import {darkTheme, theme} from "../styles/Theme.styled";
+import {GlobalStyle} from "../styles/Global.styled";
+import {Burger} from "../layout/header/Burger";
 
 
 export function App() {
     const [activeId, setActiveId] = useState(navigation[0].id)
     const [isShowProfile, setIsShowProfile] = useState(false)
+    const [activeTheme, setActiveTheme] = useState<"light" | "dark">("light")
     const homeRef = useRef<HTMLHeadingElement>(null);
     const portfolioRef = useRef<HTMLHeadingElement>(null);
     const contactsRef = useRef<HTMLHeadingElement>(null);
@@ -89,32 +93,48 @@ export function App() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     const toggleIsShowProfile = () => {
-        setIsShowProfile(prev => !prev)
+        setIsShowProfile(prev => {
+            if (homeRef.current) homeRef.current.scrollIntoView({behavior: "smooth"});
+            return !prev
+        })
+    }
+    const toggleActiveTheme = () => {
+        setActiveTheme(prev => (prev === "dark" ? "light" : "dark"))
     }
     return (
-        <Wrapper>
-            <ContentWrapper>
+        <ThemeProvider theme={activeTheme === "dark" ? darkTheme : theme}>
+            <AppWrapper>
+                <Burger isShowProfile={isShowProfile} handleClick={toggleIsShowProfile}/>
                 <Profile isShowProfile={isShowProfile} toggleIsShowProfile={toggleIsShowProfile}/>
                 <Container ref={homeRef}>
-                    <Header toggleIsShowProfile={toggleIsShowProfile}/>
+                    <Header/>
                     <Main refs={{portfolioRef, contactsRef, blogRef, educationRef, priceRef}}/>
                     <Footer/>
                 </Container>
-                <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}/>
-            </ContentWrapper>
+                <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}
+                            activeTheme={activeTheme} toggleActiveTheme={toggleActiveTheme}/>
+
+            </AppWrapper>
             <Overlay isShowProfile={isShowProfile}></Overlay>
-        </Wrapper>
+        </ThemeProvider>
     );
 }
 
-const Wrapper = styled.div`
+
+const AppWrapper = styled.div`
+  position: relative;
   margin: 0 auto;
-  background-color: ${({theme}) => theme.colors.backgroundSecondary};
-  width: 100%;
-`
-const ContentWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  max-width: 1440px;
+  display: grid;
   align-items: start;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+
+  @media screen and (max-width: 990px) {
+    grid-template-columns: auto 1fr;
+  }
+  @media ${({theme}) => theme.media.mobile} {
+    grid-template-columns: auto;
+    padding-bottom: 80px;
+  }
 `

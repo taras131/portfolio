@@ -12,8 +12,7 @@ export const Contacts: FC = () => {
             </Contact>
             <iframe title={"map"}
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3Af23578cd56db01f0d7c892b8abf6123
-                ac223f66658f27d49cb7e8507cb751b9a&amp;source=constructor"
-                    frameBorder="0">
+                ac223f66658f27d49cb7e8507cb751b9a&amp;source=constructor">
             </iframe>
         </Wrapper>
     );
@@ -26,12 +25,14 @@ const Wrapper = styled.section`
     margin-top: 70px;
     width: 100%;
     height: 300px;
+    border: none;
   }
 `
 const Contact = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  
   @media screen and (max-width: 1200px) {
     flex-direction: column-reverse;
     justify-content: center;

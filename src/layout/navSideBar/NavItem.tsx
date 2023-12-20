@@ -38,7 +38,6 @@ const Wrapper = styled.li<TStyledProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 45px;
   position: relative;
 
   & svg {

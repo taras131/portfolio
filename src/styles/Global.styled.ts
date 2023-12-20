@@ -1,6 +1,8 @@
-import {createGlobalStyle} from "styled-components";
+import {createGlobalStyle, css} from "styled-components";
 import {theme} from "./Theme.styled";
 
+// @ts-ignore
+// @ts-ignore
 export const GlobalStyle = createGlobalStyle`
   *,
   *::before,
@@ -8,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
     @media (prefers-reduced-motion: reduce) {
       animation: unset;
     }
@@ -22,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     color: ${theme.colors.textPrimary};
     line-height: 1.2;
-    min-width: 360px;
+    background-color: ${theme.colors.backgroundSecondary};
   }
 
   button {
@@ -37,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${theme.colors.textPrimary};
   }
 
   h2 {
@@ -62,7 +65,10 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 24px;
     text-transform: capitalize;
-    color: ${theme.colors.textSecondary}
+    ${({ theme }) => css`
+      color: ${theme.colors.accent};
+    `};
+ 
   }
 
   span {
