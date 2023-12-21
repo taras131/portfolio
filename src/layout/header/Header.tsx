@@ -3,7 +3,7 @@ import {Button} from "../../components/Button";
 import {Icon} from "../../components/Icon";
 import styled from "styled-components";
 import myPhoto from "../../assets/images/my_photo.webp";
-import backgroundImage from "../../assets/images/headerBackground.png";
+import backgroundImage from "../../assets/images/header.png";
 import {spriteIds} from "../../utils/consts";
 
 export const Header: FC = () => {
@@ -36,9 +36,14 @@ const Wrapper = styled.header`
   margin-bottom: 70px;
   padding-top: 95px;
   width: 100%;
+  padding-right: 30px;
+  
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
   background-image: url(${backgroundImage});
-  background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -84,10 +89,7 @@ const Info = styled.div`
   @media screen and (max-width: 1388px) {
     padding-left: 30px;
   }
-  @media screen and (max-width: 1326px) {
-    padding-right: 30px;
-  }
-`
+`;
 
 const MyName = styled.span`
   font-size: 48px;
@@ -98,5 +100,4 @@ const Photo = styled.img`
   width: 325px;
   height: 457px;
   object-fit: cover;
-
-`
+`;

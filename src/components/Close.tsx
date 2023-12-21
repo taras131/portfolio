@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {Icon} from "./Icon";
 import {spriteIds} from "../utils/consts";
 import styled from "styled-components";
-import {theme} from "../styles/Theme.styled";
 
 type TProps = {
     handleClick: () => void
@@ -21,9 +20,12 @@ const Wrapper = styled.button`
   top: 30px;
   right: 30px;
   display: none;
-
-  @media ${theme.media.laptop} {
-    display: block;
+  background-color: ${({theme}) => theme.colors.backgroundPrimary};
+  
+  @media ${({theme}) => theme.media.laptop} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 

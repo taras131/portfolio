@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import styled from "styled-components";
-import {theme} from "../../styles/Theme.styled";
 
 type TProps = {
     isShowProfile: boolean
@@ -60,7 +59,7 @@ const Wrapper = styled.button<TWrapperProps>`
     transform: translateY(7px);
   }
 
-  @media ${theme.media.laptop} {
+  @media ${({theme}) => theme.media.laptop} {
     display: ${props => props.isShowProfile ? "none" : "flex"};
     align-items: center;
     justify-content: center;

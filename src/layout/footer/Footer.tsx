@@ -20,5 +20,9 @@ const Wrapper = styled.footer`
   gap: 15px;
   height: 60px;
   background-color: ${({theme}) => theme.colors.backgroundPrimary};
+  @media ${({theme}) => theme.media.mobile} {
+    margin-left: -15px;
+    margin-right: -15px; 
+  }
 `;
 

@@ -19,14 +19,13 @@ export const Button = styled.button<TButton>`
   justify-content: center;
   gap: ${props => props.gapPx ? `${props.gapPx}px` : "10px"};
   transition: all 0.3s;
-
-
+  
   ${props => props.variant === "outlined" && css<TButton>`
     background-color: ${({theme}) => theme.colors.backgroundPrimary};
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
     width: 169px;
     height: 38px;
-
+    
     &:hover {
       box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
     }
@@ -42,12 +41,15 @@ export const Button = styled.button<TButton>`
       box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
     }
   `}
+  
   ${props => props.variant === "text" && css<TButton>`
     color: ${({theme}) => theme.colors.accent};
   `}
+  
   ${props => props.heightPx && css<TButton>`
     height: ${(props) => `${props.heightPx}px`};
   `}
+  
   &:active {
     transform: translateY(2px);
     color: inherit;

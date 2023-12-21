@@ -1,9 +1,6 @@
-import {createGlobalStyle, css} from "styled-components";
-import {theme} from "./Theme.styled";
+import {createGlobalStyle, DefaultTheme} from "styled-components";
 
-// @ts-ignore
-// @ts-ignore
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
   *,
   *::before,
   *::after {
@@ -17,14 +14,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   *:focus-visible {
-    outline: 2px solid ${theme.colors.accent};
+    outline: 2px solid ${({theme}) => theme.colors.accent};
   }
 
   body {
     font-family: 'Inter', sans-serif;
-    color: ${theme.colors.textPrimary};
     line-height: 1.2;
-    background-color: ${theme.colors.backgroundSecondary};
+    background-color: ${props => props.theme.colors.backgroundSecondary};
+    color: ${props => props.theme.colors.textPrimary};
   }
 
   button {
@@ -39,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${theme.colors.textPrimary};
+    color: ${props => props.theme.colors.textPrimary};
   }
 
   h2 {
@@ -65,15 +62,16 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 24px;
     text-transform: capitalize;
-    ${({ theme }) => css`
-      color: ${theme.colors.accent};
-    `};
- 
+    color: ${props => props.theme.colors.textSecondary};
   }
 
   span {
     font-size: 15px;
     font-weight: 400;
     text-transform: capitalize;
+  }
+  
+  input, textarea {
+    color: ${props => props.theme.colors.textPrimary};
   }
 `;

@@ -7,7 +7,6 @@ import {ProfileSkills} from "./ProfileSkills";
 import {ProfileExtraSkills} from "./ProfileExtraSkills";
 import {Button} from "../../components/Button";
 import {Icon} from "../../components/Icon";
-import {theme} from "../../styles/Theme.styled";
 import {Close} from "../../components/Close";
 
 type TProps = {
@@ -64,7 +63,7 @@ const Wrapper = styled.aside<TWrapper>`
     border-bottom: 1.5px solid ${({theme}) => theme.colors.backgroundSecondary};
   }
 
-  @media ${theme.media.laptop} {
+  @media ${({theme}) => theme.media.laptop} {
     transform: ${props => props.isShowProfile ? "translateX(0)" : "translateX(-100%)"};
     position: absolute;
   }

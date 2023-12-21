@@ -8,15 +8,15 @@ import {Container} from "./Container";
 import {Header} from "../layout/header/Header";
 import {Footer} from "../layout/footer/Footer";
 import {Overlay} from "./Overlay";
-import {darkTheme, theme} from "../styles/Theme.styled";
+import {darkTheme, lightTheme} from "../styles/Theme.styled";
+import {Burger} from "./Burger";
+import {ThemeEnum} from "../models/TStyles";
 import {GlobalStyle} from "../styles/Global.styled";
-import {Burger} from "../layout/header/Burger";
-
 
 export function App() {
     const [activeId, setActiveId] = useState(navigation[0].id)
     const [isShowProfile, setIsShowProfile] = useState(false)
-    const [activeTheme, setActiveTheme] = useState<"light" | "dark">("light")
+    const [activeTheme, setActiveTheme] = useState<ThemeEnum>(ThemeEnum.light)
     const homeRef = useRef<HTMLHeadingElement>(null);
     const portfolioRef = useRef<HTMLHeadingElement>(null);
     const contactsRef = useRef<HTMLHeadingElement>(null);
@@ -99,10 +99,10 @@ export function App() {
         })
     }
     const toggleActiveTheme = () => {
-        setActiveTheme(prev => (prev === "dark" ? "light" : "dark"))
+        setActiveTheme(prev => (prev === ThemeEnum.dark ? ThemeEnum.light : ThemeEnum.dark))
     }
     return (
-        <ThemeProvider theme={activeTheme === "dark" ? darkTheme : theme}>
+        <ThemeProvider theme={activeTheme === ThemeEnum.dark ? darkTheme : lightTheme}>
             <AppWrapper>
                 <Burger isShowProfile={isShowProfile} handleClick={toggleIsShowProfile}/>
                 <Profile isShowProfile={isShowProfile} toggleIsShowProfile={toggleIsShowProfile}/>
@@ -113,13 +113,12 @@ export function App() {
                 </Container>
                 <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}
                             activeTheme={activeTheme} toggleActiveTheme={toggleActiveTheme}/>
-
             </AppWrapper>
             <Overlay isShowProfile={isShowProfile}></Overlay>
+            <GlobalStyle/>
         </ThemeProvider>
     );
 }
-
 
 const AppWrapper = styled.div`
   position: relative;
@@ -136,5 +135,7 @@ const AppWrapper = styled.div`
   @media ${({theme}) => theme.media.mobile} {
     grid-template-columns: auto;
     padding-bottom: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 `

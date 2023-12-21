@@ -25,15 +25,5 @@ const Wrapper = styled.div`
     font-size: 18px;
     font-weight: 500;
   }
-  
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1.5px;
-    background-color: ${({theme}) => theme.colors.backgroundSecondary};
-    position: absolute;
-    bottom: 0;
-  }
-`
+`;
 

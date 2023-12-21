@@ -1,4 +1,8 @@
-export const theme = {
+import {DefaultTheme} from "styled-components";
+import {ITheme, ThemeEnum} from "../models/TStyles";
+
+// ITheme - используется для статичной темы
+const baseTheme: ITheme = {
     colors: {
         accent: "#FFB400",
         textPrimary: "#2B2B2B",
@@ -17,11 +21,16 @@ export const theme = {
     }
 }
 
-export const darkTheme = {
-    ...theme, colors: {
-        ...theme.colors, textPrimary: "#FFFFFF",
-        textSecondary: "#F0F0F6",
-        backgroundPrimary: "#767676",
-        backgroundSecondary: "#2B2B2B"
-    }
+// DefaultTheme - используется для динамических тем
+export const lightTheme: DefaultTheme = {
+    ...baseTheme,
+    type: ThemeEnum.light,
+}
+
+export const darkTheme: DefaultTheme = {
+    ...baseTheme,
+    colors: {...baseTheme.colors, backgroundSecondary: "#2B2B2B", backgroundPrimary: "#767676",
+        textPrimary:  "#FFFFFF", textSecondary: "#F0F0F6"},
+    type: ThemeEnum.dark,
+
 }

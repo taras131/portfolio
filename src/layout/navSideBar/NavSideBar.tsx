@@ -63,7 +63,7 @@ const Wrapper = styled.menu<TWrapperProps>`
   }
 
   button:hover {
-    background-color: ${({theme}) => theme.colors.backgroundSecondary};
+    background-color: ${({theme}) => theme.colors.accent};
   }
 
   ul {
