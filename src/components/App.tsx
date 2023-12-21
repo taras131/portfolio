@@ -131,11 +131,11 @@ const AppWrapper = styled.div`
 
   @media screen and (max-width: 990px) {
     grid-template-columns: auto 1fr;
+    padding-left: 15px;
   }
   @media ${({theme}) => theme.media.mobile} {
     grid-template-columns: auto;
     padding-bottom: 80px;
-    padding-left: 15px;
     padding-right: 15px;
   }
 `
