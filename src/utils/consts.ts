@@ -21,55 +21,54 @@ import {TContact} from "../models/TContacts";
 import {TProfile} from "../models/TProfile";
 import {TNavigation} from "../models/TNavigation";
 //sprite ids
-export const spriteIds = {
-    check: "check",
-    contact: "contact",
-    location: "location",
-    mail: "mail",
-    petroleum: "petroleum",
-    station: "station",
-    garage: "garage",
-    filling: "filling",
-    copyright: "copyright",
-    facebook: "facebook",
-    instagram: "instagram",
-    twitter: "twitter",
-    dribble: "dribble",
-    youtube: "youtube",
-    linkedIn: "linkedIn",
-    doubleIcon: "doubleIcon",
-    cv: "cv",
-    download: "download",
-    star: "star",
-    contrast: "contrast",
-    home: "home",
-    popUp: "popUp",
-    portfolio: "portfolio",
-    blog: "blog",
-    code: "code",
-    rightArrow: "rightArrow",
-    arrow: "arrow",
-    plus: "plus",
-    mobile: "mobile",
-    close: "close"
+export enum spriteIds  {
+    sound= "sound",
+    photography= "photography",
+    game= "game",
+    design= "design",
+    development= "development",
+    check= "check",
+    contact= "contact",
+    location= "location",
+    mail= "mail",
+    petroleum= "petroleum",
+    station= "station",
+    garage= "garage",
+    filling= "filling",
+    copyright= "copyright",
+    facebook= "facebook",
+    instagram= "instagram",
+    twitter= "twitter",
+    dribble= "dribble",
+    youtube= "youtube",
+    linkedIn= "linkedIn",
+    doubleIcon= "doubleIcon",
+    cv= "cv",
+    download= "download",
+    star= "star",
+    contrast= "contrast",
+    home= "home",
+    popUp= "popUp",
+    portfolio= "portfolio",
+    blog= "blog",
+    code= "code",
+    rightArrow= "rightArrow",
+    arrow= "arrow",
+    plus= "plus",
+    mobile= "mobile",
+    close= "close"
 }
 //services
 export const servicesTitle = "My Services";
 export const servicesDescription = "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia " +
     "consequat duis enim velit mollit. lorem ipsum"
 export const services: TService [] = [
-    {id: 0, title: "Web Development", subtitle: "Blog, E-commerce", iconId: "development"},
-    {id: 1, title: "UI/UX Design", subtitle: "Mobile App, Website Design", iconId: "design"},
-    {id: 2, title: "Sound Design", subtitle: "Voice Over, Beat Making", iconId: "sound"},
-    {id: 3, title: "Game Design", subtitle: "Character Design, Props & Objects", iconId: "game"},
-    {id: 4, title: "Photography", subtitle: "Portrait, Product Photography", iconId: "photography"},
-    {
-        id: 5,
-        title: "Advertising",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Vitae nulla diam in ac dictum a urna" +
-            " viverra morbi.",
-        iconId: ""
-    }
+    {id: 0, title: "Web Development", subtitle: "Blog, E-commerce", iconId: spriteIds.development},
+    {id: 1, title: "UI/UX Design", subtitle: "Mobile App, Website Design", iconId: spriteIds.design},
+    {id: 2, title: "Sound Design", subtitle: "Voice Over, Beat Making", iconId: spriteIds.sound},
+    {id: 3, title: "Game Design", subtitle: "Character Design, Props & Objects", iconId: spriteIds.game},
+    {id: 4, title: "Photography", subtitle: "Portrait, Product Photography", iconId: spriteIds.photography},
+    {id: 5, title: "Sound Design", subtitle: "Voice Over, Beat Making", iconId: spriteIds.sound},
 ]
 //price plans
 export const plansTitle = "Price plans";

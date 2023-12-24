@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
-import {plansAdvantages} from "../../utils/consts";
-import {AdvantagesListItem} from "./AdvantagesListItem";
+import {plansAdvantages, spriteIds} from "../../utils/consts";
 import styled from "styled-components";
+import {ListItemWithIcon} from "../../components/listItemWithIcon/ListItemWithIcon";
 
 type TProps = {
     advantagesIdList: number []
@@ -9,10 +9,11 @@ type TProps = {
 
 export const AdvantagesList: FC<TProps> = ({advantagesIdList}) => {
     const advantagesList = plansAdvantages.map(plansAdvantage => {
-        const isInclude = advantagesIdList.includes(plansAdvantage.id)
-        return (<AdvantagesListItem key={plansAdvantage.id}
-                                    plansAdvantage={plansAdvantage}
-                                    isInclude={isInclude}/>)
+        const isActive = advantagesIdList.includes(plansAdvantage.id)
+        return (<ListItemWithIcon key={plansAdvantage.id}
+                                  iconId={isActive ? spriteIds.check : spriteIds.close}
+                                  title={plansAdvantage.name}
+                                  isActive={isActive}/>)
     })
     return (
         <Wrapper>

@@ -1,3 +1,4 @@
+// @ts-ignore
 import {createGlobalStyle, DefaultTheme} from "styled-components";
 
 export const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
@@ -70,7 +71,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
     font-weight: 400;
     text-transform: capitalize;
   }
-  
+
   input, textarea {
     color: ${props => props.theme.colors.textPrimary};
   }

@@ -1,17 +1,18 @@
-import styled, {ThemeProvider} from 'styled-components';
-import {Main} from "../layout/main/Main";
-import {NavSideBar} from "../layout/navSideBar/NavSideBar";
-import {Profile} from "../layout/profileSideBar/Profile";
+import {ThemeProvider} from 'styled-components';
+import {Main} from "../../layout/main/Main";
+import {NavSideBar} from "../../layout/navSideBar/NavSideBar";
+import {Profile} from "../../layout/profileSideBar/Profile";
 import React, {useEffect, useRef, useState} from "react";
-import {navigation} from "../utils/consts";
-import {Container} from "./Container";
-import {Header} from "../layout/header/Header";
-import {Footer} from "../layout/footer/Footer";
-import {Overlay} from "./Overlay";
-import {darkTheme, lightTheme} from "../styles/Theme.styled";
-import {Burger} from "./Burger";
-import {ThemeEnum} from "../models/TStyles";
-import {GlobalStyle} from "../styles/Global.styled";
+import {navigation} from "../../utils/consts";
+import {Container} from "../Container";
+import {Header} from "../../layout/header/Header";
+import {Footer} from "../../layout/footer/Footer";
+import {Overlay} from "../Overlay";
+import {darkTheme, lightTheme} from "../../styles/Theme.styled";
+import {Burger} from "../Burger";
+import {ThemeEnum} from "../../models/TStyles";
+import {GlobalStyle} from "../../styles/Global.styled";
+import {S} from "./App_Style";
 
 export function App() {
     const [activeId, setActiveId] = useState(navigation[0].id)
@@ -103,7 +104,7 @@ export function App() {
     }
     return (
         <ThemeProvider theme={activeTheme === ThemeEnum.dark ? darkTheme : lightTheme}>
-            <AppWrapper>
+            <S.App>
                 <Burger isShowProfile={isShowProfile} handleClick={toggleIsShowProfile}/>
                 <Profile isShowProfile={isShowProfile} toggleIsShowProfile={toggleIsShowProfile}/>
                 <Container ref={homeRef}>
@@ -113,29 +114,11 @@ export function App() {
                 </Container>
                 <NavSideBar activeId={activeId} handleActiveChange={handleActiveChange}
                             activeTheme={activeTheme} toggleActiveTheme={toggleActiveTheme}/>
-            </AppWrapper>
+            </S.App>
             <Overlay isShowProfile={isShowProfile}></Overlay>
             <GlobalStyle/>
         </ThemeProvider>
     );
 }
 
-const AppWrapper = styled.div`
-  position: relative;
-  margin: 0 auto;
-  max-width: 1440px;
-  display: grid;
-  align-items: start;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 20px;
 
-  @media screen and (max-width: 990px) {
-    grid-template-columns: auto 1fr;
-    padding-left: 15px;
-  }
-  @media ${({theme}) => theme.media.mobile} {
-    grid-template-columns: auto;
-    padding-bottom: 80px;
-    padding-right: 15px;
-  }
-`

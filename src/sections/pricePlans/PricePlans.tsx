@@ -1,7 +1,8 @@
 import React, {FC, LegacyRef} from 'react';
 import {TemplateSection} from "../../components/TemplateSection";
 import {plansTitle, plansDescription, plans} from "../../utils/consts";
-import {PricePlansList} from "./PricePlansList";
+import {PricePlansListItem} from "./PricePlansListItem";
+import {S} from "./PricePlans_Style"
 
 
 type TProps = {
@@ -9,10 +10,13 @@ type TProps = {
 }
 
 export const PricePlans: FC<TProps> = ({priceRef}) => {
+    const plansList = plans.map(plan => (<PricePlansListItem key={plan.id} plan={plan}/>))
     return (
         <TemplateSection sectionTitle={plansTitle}
                          sectionDescription={plansDescription}>
-            <PricePlansList plans={plans}/>
+            <S.ListWrapper>
+                {plansList}
+            </S.ListWrapper>
         </TemplateSection>
     );
 };

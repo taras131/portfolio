@@ -1,48 +1,29 @@
 import React, {FC} from 'react';
-import styled from "styled-components";
 import {Icon} from "../../components/Icon";
 import {Button} from "../../components/Button";
+import {S} from "./Services_Style"
+import {spriteIds} from "../../utils/consts";
+import {TService} from "../../models/TServices";
 
-type TProps = {
-    title: string
-    subtitle: string
-    iconId?: string
-}
-
-export const ServicesListItem: FC<TProps> = ({title, subtitle, iconId}) => {
+export const ServicesListItem: FC<TService> = ({title, subtitle, iconId}) => {
     return (
-        <Wrapper>
-            {iconId && (<Icon iconId={iconId}/>)}
+        <S.ListItemWrapper>
+            <Icon iconId={iconId}/>
             <h3>{title}</h3>
             <p>{subtitle}</p>
-            {!iconId && (
-                <Button variant={"text"} as={"a"} href={"#"} fontSizePx={12} fontWeight={700} gapPx={1}>
+            <div>
+                <h4>Advertising</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Vitae nulla diam in ac dictum a urna
+                    viverra morbi.
+                </p>
+                <Button variant={"text"} as={"a"} href={"#contacts"} fontSizePx={12} fontWeight={700} gapPx={1}>
                     ORDER NOW
-                    <Icon iconId={"rightArrow"} height={20} width={20}/>
+                    <Icon iconId={spriteIds.rightArrow} height={20} width={20}/>
                 </Button>
-            )}
-        </Wrapper>
+            </div>
+        </S.ListItemWrapper>
     );
 };
 
-type WrapperProps = {
-    iconId?: string
-}
 
-const Wrapper = styled.li<WrapperProps>`
-  min-height: 225px;
-  width: 290px;
-  flex-grow: 1;
-  padding: 30px 25px 20px; 
-  background-color: ${({theme}) => theme.colors.backgroundPrimary};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  
-  p {
-    text-align: center;
-  }
-`;
 
