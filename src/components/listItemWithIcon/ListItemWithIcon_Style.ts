@@ -18,8 +18,8 @@ const Wrapper = styled.li<TWrapper>`
     ? props.theme.colors.textPrimary
     : props.theme.colors.textSecondary};
   }
-`
+`;
 
 export const S = {
     Wrapper
-}
+};
