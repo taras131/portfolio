@@ -14,7 +14,7 @@ export const Icon: FC<TProps> = ({
                                      iconId,
                                      width = 74,
                                      height = 74,
-                                     isActive = false,
+                                     isActive =false ,
                                  }) => {
     return (
         <SVG width={`${width}px`} height={`${height}px`} viewBox={`0 0 ${width} ${height}`} isActive={isActive}
@@ -30,6 +30,6 @@ type TStyledProps = {
 
 const SVG = styled.svg<TStyledProps>`
   ${props => props.isActive && css<TStyledProps>`
-    fill: ${props => props.theme.colors.accent};
+    fill: ${props => props.isActive ? props.theme.colors.accent : props.theme.colors.textSecondary};
   `}
 `

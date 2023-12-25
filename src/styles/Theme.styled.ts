@@ -21,7 +21,6 @@ const baseTheme: ITheme = {
     }
 }
 
-// DefaultTheme - используется для динамических тем
 export const lightTheme: DefaultTheme = {
     ...baseTheme,
     type: ThemeEnum.light,

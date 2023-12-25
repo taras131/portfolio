@@ -19,7 +19,7 @@ export const RecommendationsListItem: FC<TProps> = ({recommendation}) => {
     );
 };
 
-const Wrapper = styled.li`
+const Wrapper = styled.div`
   min-width: 310px;
   min-height: 323px;
   background-color: ${({theme}) => theme.colors.backgroundPrimary};

@@ -7,16 +7,16 @@ type TWrapper = {
 const Wrapper = styled.li<TWrapper>`
   display: flex;
   align-items: center;
-  
+
   svg {
     margin-right: 15px;
-    fill: ${props => props.isActive ? props.theme.colors.accent : props.theme.colors.textSecondary};
+    fill: ${props => !props.isActive && props.theme.colors.textSecondary};
   }
 
   span {
     color: ${props => props.isActive
-    ? props.theme.colors.textPrimary
-    : props.theme.colors.textSecondary};
+            ? props.theme.colors.textPrimary
+            : props.theme.colors.textSecondary};
   }
 `;
 
